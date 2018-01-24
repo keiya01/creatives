@@ -1,0 +1,34 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.top{
+	height: 650px;
+	width: 100%;
+	text-align: center;
+	color: white;
+	background: linear-gradient(to left top,#00ff00 20%,#0000ff);
+}
+.top h1{
+	padding-top: 150px;
+	font-size: 65px;
+	font-family: Impact,Charcoal;
+}
+.top p{
+	font-size: 17px;
+	padding-top: 20px;
+}
+.btn{
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 170px;
+}
+.btn p{
+	float: left;
+	padding: 0 20px;
+	font-size: 18px;
+}
+.top-btn{
+	border: 2px solid white;
+	padding: 10px;
+	border-radius: 5px;
+}

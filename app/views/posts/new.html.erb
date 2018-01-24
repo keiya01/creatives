@@ -1,0 +1,15 @@
+<div class="post-form">
+	<h3>Create Idea</h3>
+	<div class="form">
+		<% @post.errors.full_messages.each do |message| %>
+			<div class="error-message">
+			<p style="color:red;"><%= message %></p>
+			</div>
+		<% end %>
+		<%= form_tag("/posts/create") do %>
+		  <input class="post-input" type="text" name="title" placeholder="アイディアを入力してください。" value="<%= @post.title %>">
+		  <textarea class="post-input post-text" type="text" name="contents" placeholder="概要"　value="<%= @post.contents %>"></textarea>
+		  <br/><input class="input-btn" type="submit" value="投稿">
+		<% end %>
+	</div>
+</div>

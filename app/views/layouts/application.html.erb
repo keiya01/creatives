@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detector</title>
+    <%= csrf_meta_tags %>
+    <meta charset="UTF-8">
+    <meta name="description" content="アイディアのSNS">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon' %>
+  </head>
+
+  <body>
+  	<header>
+  		<div class="header-logo">
+        <% if @current_user %>
+          <%= link_to("/posts/index",class: "border-none btn-black") do %>
+          <%= image_tag("/image/detector_logo.png", class: "logo-image") %>
+          <% end %>
+          <p><%= link_to("投稿","/posts/new",class: "border-none header-color") %></p>
+        <% else %>
+  			  <%= link_to("/",class: "border-none btn-black") do %>
+          <%= image_tag("/image/detector_logo.png", class: "logo-image") %>
+          <% end %>
+        <% end %>
+  		</div>
+  	</header>
+    <% if flash[:notice] %>
+    <div id="flash">
+      <h3 class="flash-text"><%= flash[:notice] %></h3>
+    </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<div class="top">
+	<h3>LogIn</h3>
+	<div class="form">
+		<% if flash[:error] %>
+		  <div class="error-flash">
+		  	<p><%= flash[:error] %></p>
+		  </div>
+		<% end %>
+		<%= form_tag("/users/login") do %>
+		  <input class="user-input" type="text" name="email" placeholder="please enter email">
+		  <br/><input class="user-input" type="password" name="password" placeholder="please enter password">
+		  <br/><input class="user-input" type="submit" value="ログイン">
+		<% end %>
+	</div>
+	<p><%= link_to("新規登録へ","/signup",class: "change-btn") %></p>
+</div>
