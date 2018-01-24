@@ -1,0 +1,33 @@
+	<div class="post-list">
+	<% @posts.each do |post| %>
+	<% good = Good.find_by(user_id: @current_user.id, post_id: post.id) %>
+	<% bad = Bad.find_by(user_id: @current_user.id, post_id: post.id) %>
+		<div class="post">
+			<h3><%= post.title %></h3>
+			<div class="select-evaluation">
+			<% if good && !bad %>
+				<p class="good-btn pushed-good-btn"><i class="fa fa-thumbs-up"></i></p>
+				<p class="bad-btn"><i class="fa fa-thumbs-o-down"></i></p>
+				<div class="clear-left clear-right"></div>
+			<% elsif !good && bad %>
+				<p class="good-btn"><i class="fa fa-thumbs-o-up"></i></p>
+				<p class="bad-btn pushed-bad-btn"><i class="fa fa-thumbs-down"></i></p>
+				<div class="clear-left clear-right"></div>
+			<% else %>
+			  <%= link_to("/good/#{post.id}/create", method: 'post', class: "select-btn-black") do %>
+				<p class="good-btn"><i class="fa fa-thumbs-o-up"></i></p>
+		      <% end %>
+			  <%= link_to("/bad/#{post.id}/create", method: 'post', class: "select-btn-black") do %>
+				<p class="bad-btn"><i class="fa fa-thumbs-o-down"></i></p>
+			  <% end %>
+				<div class="clear-left clear-right"></div>
+			<% end %>
+			</div>
+			<div class="post-menu">
+			<p class="post-time"><%= simple_time(post.created_at) %></p>
+			<p class="post-detail"><%= link_to("詳細","/posts/#{post.id}",class: "border-none post-menu-color") %></p>
+			<div class="clear-left clear-right"></div>
+			</div>
+		</div>
+	<% end %>
+	</div>
