@@ -1,3 +1,17 @@
+<header>
+      <div class="header-logo">
+        <% if @current_user %>
+           <p class="back-btn"><i class="fa fa-arrow-left"></i></p>
+          <%= link_to("/posts/index",class: "border-none") do %>
+          <%= image_tag("/image/detector_logo.png", class: "logo-image") %>
+          <% end %>
+        <% else %>
+          <%= link_to("/",class: "border-none btn-black") do %>
+          <%= image_tag("/image/detector_logo.png", class: "logo-image") %>
+          <% end %>
+        <% end %>
+      </div>
+</header>
 <div class="show-page">
 	<div class="post-show">
 		<p class="post-time"><%= simple_time(@post.created_at) %></p>
@@ -9,7 +23,7 @@
  <% good = Good.find_by(user_id: @current_user.id, post_id: @post.id) %>
  <% good_count = Good.where(post_id: @post.id).count %>
  <% comment_count = Comment.where(post_id: @post.id).count %>
- <%= link_to("/comments/#{@post.id}/index", class: "btn-green" ) do %>
+ <%= link_to("/comments/#{@post.id}/index", class: "btn-green", remote: true ) do %>
   <p class="comment-btn">
    <i class="fa fa-comment-o"></i>
    <%= comment_count %>

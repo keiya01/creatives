@@ -1,0 +1,13 @@
+$("#comments").html("<%= j(render 'comments/index') %>");
+$("#comments").show();
+var current_scrollY = $( window ).scrollTop();
+$('.show-page').css({
+    position: 'fixed',
+    width: '100%',
+    top: -1 * current_scrollY
+  });
+$('.back-btn').on('click', function(e){
+    $('.show-page').attr( {style: ''} );
+    $('html,body').prop({scrollTop: current_scrollY});
+    $( '#comments').hide();
+});

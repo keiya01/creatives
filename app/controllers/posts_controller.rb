@@ -8,25 +8,35 @@ class PostsController < ApplicationController
   	@posts = Post.page(params[:page]).per(5).order(created_at: 'DESC')
   end
 
+  def search
+    @posts = Post.page(params[:page]).per(5).where('contents LIKE(?)', "%#{params[:search]}%").order(created_at: 'DESC')
+  end
+
   def show
+    render(layout: "posts_head")
+    respond_to do |format|
+        format.html
+        format.js
+      end
   end
 
   def new
   	@post = Post.new
-  	if  !@post_time.blank?
-  		flash[:notice] = "次の投稿は#{@next_post}から可能です。"
-  		redirect_to("/posts/index")
-  	end
+    render(layout: "posts_head")
+    respond_to do |format|
+        format.html
+        format.js
+      end
   end
 
   def create
   	@post = Post.new(title: params[:title], contents: params[:contents], user_id: @current_user.id)
   	if  !@post_time.blank?
   		flash[:notice] = "次の投稿は#{@next_post}から可能です。"
-  		redirect_to("/posts/index")
+  		redirect_back(fallback_location: "/posts/index")
   	elsif @post.save
   		flash[:notice] = "Success!!"
-  		redirect_to("/posts/index")
+  		redirect_back(fallback_location: "/posts/index")
   	else
   		render("posts/new")
   	end

@@ -1,0 +1,14 @@
+<div class="page">
+ <div class="post-form">
+  <%= form_tag("/search", method: 'get') do %>
+	<input type="text" name="search" class="post-input">
+	<input type="submit" class="input-btn">
+  <% end %>
+ </div>
+<% if params[:search] %>
+ <div class="posts-list">
+	<%= render partial: 'index' %>
+ </div>
+<%= paginate @posts %>
+<% end %>
+</div>

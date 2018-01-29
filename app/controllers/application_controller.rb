@@ -20,8 +20,4 @@ class ApplicationController < ActionController::Base
   	end
   end
 
-  def pushed_btn_user
-  	@good_user = Good.find_by(user_id: @current_user.id, post_id: params[:post_id])
-  	@bad_user = Bad.find_by(user_id: @current_user.id, post_id: params[:post_id])
-  end
 end

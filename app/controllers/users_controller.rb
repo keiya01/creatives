@@ -53,8 +53,16 @@ class UsersController < ApplicationController
   		flash[:error] = "メールアドレスまたはパスワードが違います。"
   		redirect_to("/login")
   	end
-
   end
+
+    def logout
+      @user = User.find_by(id: session[:user_id])
+      if @user
+        session[:user_id] = nil
+        flash[:notice] = "Good bye."
+        redirect_to('/')
+      end
+    end
 
 private
 

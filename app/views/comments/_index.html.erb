@@ -1,0 +1,41 @@
+<header>
+      <div class="header-logo">
+        <% if @current_user %>
+           <p class="back-btn"><i class="fa fa-arrow-left"></i></p>
+          <%= link_to("/posts/index",class: "border-none") do %>
+          <%= image_tag("/image/detector_logo.png", class: "logo-image") %>
+          <% end %>
+        <% else %>
+          <%= link_to("/",class: "border-none btn-black") do %>
+          <%= image_tag("/image/detector_logo.png", class: "logo-image") %>
+          <% end %>
+        <% end %>
+      </div>
+</header>
+<div class="comment-page">
+ <div class="comment-form">	
+ <%= form_tag("/comments/#{params[:post_id]}/create") do %>
+  <textarea name="contents" class="comment-text" placeholder="Comment"><%= @comment.contents %></textarea>
+  <input type="submit" class="input-btn">
+ <% end %>
+ </div>
+ <% if !@comments.blank? %>
+ <div class="comments">
+  <% @comments.each do |comment| %>
+  <% user = User.find_by(id: comment.user_id) %>
+    <div class="comment">
+   	<div class="comment-menu">
+   	 <p class="comment-name"><%= user.name %></p>
+   	 <p class="comment-time"><%= simple_time(comment.created_at) %></p>
+  	</div>
+  	<div class="clear-left"></div>
+  	<p class="comment-contents"><%= comment.contents %></p>
+   </div>
+  <% end %>
+ </div>
+ <% else %>
+  <div class="comment">
+   <h3>コメントがありません。</h3>
+  </div>
+ <% end %>
+</div>

@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
-  post 'good/:post_id/create' => 'good#create'
-  post 'bad/:post_id/create' => 'bad#create'
+  get 'comments/:post_id/index' => 'comments#index'
+  post 'comments/:post_id/create' => 'comments#create'
 
+  post 'goods/:post_id/create' => 'goods#create'
+  post 'goods/:post_id/destroy' => 'goods#destroy'
+  
   get 'posts/new' => 'posts#new'
   post 'posts/create' => 'posts#create'
+  get 'search' => 'posts#search'
   get 'posts/index' => "posts#index"
   get 'posts/:id' => 'posts#show'
 
+  post 'logout' => 'users#logout'
   get 'login' => 'users#login_form'
   post 'users/login' => 'users#login'
   get 'signup' => 'users#new'
