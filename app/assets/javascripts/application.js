@@ -30,6 +30,31 @@ $(document).on('turbolinks:load', function() {
 	headerFlash("#flash");
 	headerFlash("#flash-home");
 
+	function TextAreaHeight(TextArea){
+		$(TextArea).height(20);//init
+		$(TextArea).css("lineHeight","20px");//init
+
+		$(TextArea).on("input",function(evt){
+			$(this).css("border-radius","10px");
+    		if(evt.target.scrollHeight > evt.target.offsetHeight){
+        		$(evt.target).height(evt.target.scrollHeight);
+    		}else{
+        	var lineHeight = Number($(evt.target).css("lineHeight").split("px")[0]);
+        	while (true){
+            	$(evt.target).height($(evt.target).height() - lineHeight);
+            	if(evt.target.scrollHeight > evt.target.offsetHeight){
+                	$(evt.target).height(evt.target.scrollHeight);
+            		break;
+            		}
+        		}
+    		}
+    		$(TextArea).blur(function(){
+    			$(this).css("border-radius","50px").height(20).css("line-height", "20px");
+    		});
+	});
+	};
+	TextAreaHeight(".comment-text")
+
 
 
 });

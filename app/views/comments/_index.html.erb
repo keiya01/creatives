@@ -13,12 +13,6 @@
       </div>
 </header>
 <div class="comment-page">
- <div class="comment-form">	
- <%= form_tag("/comments/#{params[:post_id]}/create") do %>
-  <textarea name="contents" class="comment-text" placeholder="Comment"><%= @comment.contents %></textarea>
-  <input type="submit" class="input-btn">
- <% end %>
- </div>
  <% if !@comments.blank? %>
  <div class="comments">
   <% @comments.each do |comment| %>
@@ -38,4 +32,10 @@
    <h3>コメントがありません。</h3>
   </div>
  <% end %>
+ <div class="comment-form">	
+ <%= form_tag("/comments/#{params[:post_id]}/create") do %>
+  <textarea name="contents" class="comment-text" placeholder="Comment"><%= @comment.contents %></textarea>
+  <input type="submit" class="comment-input-btn">
+ <% end %>
+ </div>
 </div>
