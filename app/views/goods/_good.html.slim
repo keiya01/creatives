@@ -1,0 +1,13 @@
+- @good_count = Good.where(post_id: @post.id).count
+- if @good_user
+  = link_to("/goods/#{@post.id}/destroy", method: 'post', remote: true) do
+    p.good-btn.pushed-good-btn
+      i.fa.fa-thumbs-up
+      = @good_count
+  .clear-left
+- else
+  = link_to("/goods/#{@post.id}/create", method: 'post', class: "select-btn-black", remote: true) do
+    p.good-btn
+      i.fa.fa-thumbs-o-up
+      = @good_count
+  .clear-left

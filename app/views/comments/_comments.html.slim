@@ -1,0 +1,12 @@
+- if !@comments.blank?
+  .comments
+    - @comments.each do |comment|
+      - user = User.find_by(id: comment.user_id)
+      .comment
+        .comment-menu
+          p.comment-name= user.name
+          p.comment-time= simple_time(comment.created_at)
+        .clear-left
+        p.comment-contents= comment.contents
+- else
+  h3.comment-blank コメントがありません。

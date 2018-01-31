@@ -1,0 +1,13 @@
+.top
+ h3 Create Acount
+ .form
+  -@user.errors.full_messages.each do |message|
+   .error-message
+	  p style="color:red;" = message
+  = form_tag("/users/create") do
+   input.user-input type="text" name="name" placeholder="please enter name" value="#{@user.name}"
+   br
+   input.user-input type="text" name="email" placeholder="please enter email"　value="#{@user.email}"
+   br
+   input.user-input type="submit" value="登録"
+  p.change-btn = link_to("ログインへ","/login",class: "change-btn")

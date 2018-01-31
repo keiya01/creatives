@@ -1,0 +1,4 @@
+$(function(){
+ $("#comments-list").html("<%= j( render partial: 'comments/comments') %> ");
+ $(".comment-text").val(""); $(".comment-text").height(15);
+});

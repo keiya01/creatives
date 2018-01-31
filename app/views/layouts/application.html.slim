@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Detector
+    = csrf_meta_tags
+    meta charset="UTF-8" /
+    meta content="アイディアのSNS" name="description" /
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
+  body
+    header
+      .header-logo
+        - if @current_user
+          = link_to("ログアウト", "/logout", method: 'post', class: "back-btn")
+          = link_to("/posts/index",class: "border-none btn-black") do
+            = image_tag("/image/detector_logo.png", class: "logo-image")
+          = link_to("/posts/new",class: "border-none btn-green", remote: true) do
+            p.new-post
+              i.fa.fa-pencil-square-o
+        - else
+          = link_to("/",class: "border-none btn-black") do
+            = image_tag("/image/detector_logo.png", class: "logo-image")
+    - if flash[:notice]
+      #flash
+        h3.flash-text= flash[:notice]
+    = yield

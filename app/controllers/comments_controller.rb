@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def index
   	@comments = Comment.where(post_id: params[:post_id]).order(created_at: 'ASC')
   	@comment = Comment.new
-  	render(layout: "posts_head")
+  	render(layout: nil)
   	respond_to do |format|
   		format.html
   		format.js

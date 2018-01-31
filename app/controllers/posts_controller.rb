@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   def new
   	@post = Post.new
-    render(layout: "posts_head")
+    render(layout: nil)
     respond_to do |format|
         format.html
         format.js
