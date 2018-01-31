@@ -1,0 +1,28 @@
+body
+  header
+    .header-logo
+      - if @current_user
+        p.back-btn
+          i.fa.fa-arrow-left
+        = link_to("/posts/index",class: "border-none") do
+          = image_tag("/image/detector_logo.png", class: "logo-image")
+      - else
+        = link_to("/",class: "border-none btn-black") do
+          = image_tag("/image/detector_logo.png", class: "logo-image")
+  .show-page
+    .post-show
+      p.post-time= simple_time(@post.created_at)
+      .clear-right
+      h2.post-show-title= @post.title
+      p.post-show-contents= raw(@post.contents.gsub(/\n/, '<br>'))
+    .select-evaluation
+      - @good_user = Good.find_by(user_id: @current_user.id, post_id: @post.id)
+      - @good_count = Good.where(post_id: @post.id).count
+      - @comment_count = Comment.where(post_id: @post.id).count
+      = link_to("/comments/#{@post.id}/index", class: "btn-green", remote: true ) do
+        p.comment-btn
+          i.fa.fa-comment-o
+          = @comment_count
+      #good
+        = render partial: "goods/good"
+  #comments

@@ -1,4 +1,4 @@
-<div class="comment-page">
+<% if !@comments.blank? %>
  <div class="comments">
   <% @comments.each do |comment| %>
   <% user = User.find_by(id: comment.user_id) %>
@@ -12,10 +12,7 @@
    </div>
   <% end %>
  </div>
- <%= form_tag("/comments/#{params[:post_id]}/create") do %>
- <div class="comment-form"> 
-  <textarea name="contents" class="comment-text" placeholder="Comment"><%= @comment.contents %></textarea>
-  <input type="submit" class="comment-input-btn">
- </div>
- <% end %>
-</div>
+<% else %>
+   <h3 class="comment-blank">コメントがありません。</h3>
+<% end %>
+ 

@@ -130,26 +130,37 @@
 	color: #aaa;
 }
 .good-btn{
+	width: 120px;
+	text-align: center;
 	font-size: 25px;
 	display: inline-block;
 	float: left;
 	border: 1px solid #00CC00;
-	border-radius: 50%;
-	margin-left: 50px;
-	padding: 20px 15px;
+	border-radius: 10px;
+	margin-left: 20px;
+	padding: 15px 0;
 	color: #888;
 }
 .pushed-good-btn{
 	color: #00CC00;
-	padding: 20px 15px;
 }
 .comment-btn{
+	width: 120px;
+	text-align: center;
 	font-size: 25px;
 	display: inline-block;
 	float: right;
 	border: 1px solid #00CC00;
-	border-radius: 50%;
-	margin-right: 50px;
-	padding: 20px 14px;
+	border-radius: 10px;
+	margin-right: 20px;
+	padding: 15px 0;
 	color: #00CC00;
+}
+/* search */
+.search-form{
+	width: 95%;
+	margin: 0 auto;
+	padding-top: 80px;
+	padding-bottom: 50px;
+	text-align: center;
 }

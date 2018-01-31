@@ -10,33 +10,44 @@
 	background-color: #fff;
 	width: 100%;
 	margin: 0 auto;
-	padding-top: 80px;
+	padding-top: 55px;
+	overflow-y: auto;
 }
 .comment-form{
 	width: 100%;
-    border: 1px solid #ccc;
 	margin: 0 auto;
 	position: fixed;
+	background-color: #fff;
 	bottom: 0;
 	right: 0;
 	left: 0;
 	z-index: 10;
 	float: left;
 	padding: 10px;
+	box-shadow:0 -1px 5px #aaa;
 }
 .comment-input-btn{
+	outline: none;
 	float: left;
-
+	margin-left: 10px;
+	background-color: #009900;
+	border: #009900;
+	border-radius: 50px;
+	padding: 3px 10px;
+	color: #fff;
 }
 .comment-text{
 	font-size: 13px;
 	width: 80%;
-	border-radius: 50px;
+	border-radius: 10px;
 	padding: 5px;
 	outline: none;
 	float: left;
 	background-color: #eee;
 	overflow: hidden;
+}
+#comments-list{
+	padding-bottom: 55px;
 }
 .comments{
 	height: 100%;
@@ -69,7 +80,7 @@
 	padding-bottom: 5px;
 	word-wrap: break-word;
 }
-.comment h3{
+.comment-blank{
 	font-size: 15px;
 	margin-top: 50px;
 	color: #aaa;

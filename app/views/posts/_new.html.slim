@@ -1,0 +1,25 @@
+header
+ .header-logo
+  -if @current_user
+   p.back-btn 
+    i.fa.fa-arrow-left
+   = link_to("/posts/index",class: "border-none") do
+    = image_tag("/image/detector_logo.png", class: "logo-image")
+  -else
+   = link_to("/",class: "border-none btn-black") do
+    = image_tag("/image/detector_logo.png", class: "logo-image")
+.post-form
+ h3 Create Idea
+ p
+  | アイディアの価値を高めるために
+  br
+  | 投稿は1日1回しかできません。
+ .form
+   -@post.errors.full_messages.each do |message|
+	.error-message
+	 p style="color:red;" = message
+   = form_tag("/posts/create") do
+	input.post-input type="text" name="title" placeholder="アイディアを入力してください。" value=" #{@post.title} "/
+	textarea.post-input.post-text type="text" name="contents" placeholder="概要"　value=" #{@post.contents} "/
+    br
+    input.input-btn type="submit" value="投稿"/

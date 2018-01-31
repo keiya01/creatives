@@ -1,0 +1,5 @@
+$(function(){
+	$("#good").html("<%= j(render 'goods/good') %>");
+	$(".good-btn").addClass("pushed-good-btn");
+    $(".good-btn").children("i").removeClass("fa-thumbs-o-up").addClass("fa-thumbs-up");
+});

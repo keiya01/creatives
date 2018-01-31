@@ -1,0 +1,15 @@
+#post-page
+  - @posts.each do |post|
+    - good = Good.where(post_id: post.id)
+    .post
+      = link_to("/posts/#{post.id}",class: "border-none post-menu-color", remote: true) do
+        .title-contents
+          h3= post.title
+          div !?
+        .clear-left.clear-right
+        .post-menu
+          p.good-count
+            i.fa.fa-thumbs-up
+            span= good.count
+          p.post-time= simple_time(post.created_at)
+        .clear-left
