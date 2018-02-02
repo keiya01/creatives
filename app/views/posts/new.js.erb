@@ -11,3 +11,8 @@ $('.back-btn').on('click', function(e){
     $('html, body').prop({scrollTop: current_scrollY});
     $( '#new-form').hide();
 });
+
+$('.form-tag').on('submit', function () {
+        $(this).find('input:submit').prop('disabled', true);
+        $("#load").show();
+    });

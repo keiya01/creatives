@@ -4,7 +4,7 @@
   -@user.errors.full_messages.each do |message|
    .error-message
 	  p style="color:red;" = message
-  = form_tag("/users/create") do
+  = form_tag("/users/create", class: "form-tag") do
    input.user-input type="text" name="name" placeholder="please enter name" value="#{@user.name}"
    br
    input.user-input type="text" name="email" placeholder="please enter email"　value="#{@user.email}"

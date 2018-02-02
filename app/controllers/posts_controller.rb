@@ -37,8 +37,6 @@ class PostsController < ApplicationController
   	elsif @post.save
   		flash[:notice] = "Success!!"
   		redirect_back(fallback_location: "/posts/index")
-  	else
-  		render("posts/new")
   	end
   end
 

@@ -1,5 +1,5 @@
 - @good_count = Good.where(post_id: @post.id).count
-- if @good_user
+- if Good.find_by(user_id: @current_user.id, post_id: @post.id)
   = link_to("/goods/#{@post.id}/destroy", method: 'post', remote: true) do
     p.good-btn.pushed-good-btn
       i.fa.fa-thumbs-up

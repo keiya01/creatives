@@ -30,4 +30,16 @@ $(document).on('turbolinks:load', function() {
 	headerFlash("#flash");
 	headerFlash("#flash-home");
 
+	$('.form-tag').on('submit', function () {
+        $(this).find('input:submit').prop('disabled', true);
+        $("#load").show();
+    });
+
+	$('#top').css('display','none'); //初期状態ではメインコンテンツを非表示
+	$('#home-load').css('display','block'); //ウィンドウの高さに合わせでローディング画面を表示
+	$(window).load(function () {
+		$('#home-load').delay(1000).fadeOut(1000); //$('#loader-bg').fadeOut(800);でも可
+		$('#top').css('display', 'block'); // ページ読み込みが終わったらメインコンテンツを表示する
+		});
+
 });

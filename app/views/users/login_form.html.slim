@@ -4,7 +4,7 @@
   -if flash[:error]
    .error-flash
     p = flash[:error]
-  = form_tag("/users/login") do
+  = form_tag("/users/login", class: "form-tag") do
    input.user-input type="text" name="email" placeholder="please enter email"
    br
    input.user-input type="password" name="password" placeholder="please enter password"
