@@ -158,3 +158,21 @@ header{
 	font-size: 18px;
 	color: #0e5102;
 }
+.point{
+	position: fixed;
+	top: 55px;
+	right: 20px;
+	background-color: #0e5102;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 50px;
+}
+.point p{
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+}
+.point span{
+	color: yellow;
+	padding-left: 5px;
+}

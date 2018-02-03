@@ -37,9 +37,15 @@ $(document).on('turbolinks:load', function() {
 
 	$('#top').css('display','none'); //初期状態ではメインコンテンツを非表示
 	$('#home-load').css('display','block'); //ウィンドウの高さに合わせでローディング画面を表示
-	$(window).load(function () {
+	$(window).on('turbolinks:load',function () {
 		$('#home-load').delay(1000).fadeOut(1000); //$('#loader-bg').fadeOut(800);でも可
 		$('#top').css('display', 'block'); // ページ読み込みが終わったらメインコンテンツを表示する
 		});
+	$('.logout').on('click', function(){
+		$('#load').show();
+		setTimeout(function(){
+			$('#load').fadeOut(1000);
+		}, 1000)
+	});
 
 });

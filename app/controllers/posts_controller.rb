@@ -5,11 +5,7 @@ class PostsController < ApplicationController
 
 
   def index
-  	@posts = Post.page(params[:page]).per(5).order(created_at: 'DESC')
-  end
-
-  def search
-    @posts = Post.page(params[:page]).per(5).where('contents LIKE(?)', "%#{params[:search]}%").order(created_at: 'DESC')
+  	@posts = Post.page(params[:page]).per(5).order(created_at: "DESC")
   end
 
   def show
@@ -18,6 +14,9 @@ class PostsController < ApplicationController
         format.html
         format.js
       end
+  end
+
+  def rank
   end
 
   def new

@@ -1,9 +1,0 @@
-.page
-  .search-form
-    = form_tag("/search", method: 'get') do
-      input.post-input name="search" type="text" /
-      input.input-btn type="submit" value="検索" /
-  -if params[:search]
-   .posts-list
-      = render partial: 'index'
-   = paginate @posts

@@ -28,11 +28,13 @@ class UsersController < ApplicationController
 
   def create
   	pass = (0...8).map{('a'..'z').to_a[rand(26)]}.join
-  	@user = User.new(name: params[:name], password: "aaa", email: params[:email])
+  	@user = User.new(name: params[:name], password: params[:password], email: params[:email])
   	if @user.save
-  		flash[:notice] = "Thank you!!"
+      @point = Point.new(user_id: @user.id, total: 10)
+      @point.save
+      flash[:notice] = "Thank you!!"
   		session[:user_id] = @user.id
-  		redirect_to("/posts/index")
+      redirect_to "/posts/index"
   	else
   		flash[:notice] = "Uncorrect!!"
   		render("users/new", :layout => "home")
@@ -76,5 +78,4 @@ private
   def user_find
   	@user = User.find_by(id: params[:id])
   end
-
 end

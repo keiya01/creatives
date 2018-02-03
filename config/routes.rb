@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   post 'goods/:post_id/create' => 'goods#create'
   post 'goods/:post_id/destroy' => 'goods#destroy'
   
+  get 'rank' => 'posts#rank'
   get 'posts/new' => 'posts#new'
   post 'posts/create' => 'posts#create'
-  get 'search' => 'posts#search'
   get 'posts/index' => "posts#index"
   get 'posts/:id' => 'posts#show'
 
