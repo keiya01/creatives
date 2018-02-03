@@ -25,11 +25,12 @@ html
     - if flash[:notice]
       #flash
         h3.flash-text= flash[:notice]
-    .point
-     - point = Point.find_by(user_id: @current_user.id)
-     p
-      =point.total
-      span P
+    - if @current_user
+     .point
+      - point = Point.find_by(user_id: @current_user.id)
+      p
+       =point.total
+       span P
     #load
      p = image_tag("/image/2.gif")
 = yield
