@@ -1,6 +1,7 @@
 #post-page
   - @posts.each do |post|
     - good = Good.where(post_id: post.id)
+    -comment = Comment.where(post_id: post.id)
     .post
       = link_to("/posts/#{post.id}",class: "border-none post-menu-color", remote: true) do
         .title-contents
@@ -9,7 +10,10 @@
         .clear-left.clear-right
         .post-menu
           p.good-count
-            i.fa.fa-thumbs-up
-            span= good.count
+           i.fa.fa-thumbs-up
+           = good.count
           p.post-time= simple_time(post.created_at)
+          p.comment-count
+           i.fa.fa-comment
+           = comment.count
         .clear-left

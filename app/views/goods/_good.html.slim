@@ -1,14 +1,13 @@
 - @good_count = Good.where(post_id: @post.id).count
-- if Post.find_by(id: params[:post_id], user_id: @current_user.id)
+- if Post.find_by(id: @post.id, user_id: @current_user.id)
   p.good-btn
       i.fa.fa-thumbs-o-up
       = @good_count
   .clear-lefts
 - elsif Good.find_by(user_id: @current_user.id, post_id: @post.id)
-  = link_to("/goods/#{@post.id}/destroy", method: 'post', remote: true) do
-    p.good-btn.pushed-good-btn
-      i.fa.fa-thumbs-up
-      = @good_count
+  p.good-btn.pushed-good-btn
+   i.fa.fa-thumbs-up
+   = @good_count
   .clear-left
 - else
   = link_to("/goods/#{@post.id}/create", method: 'post', class: "select-btn-black", remote: true) do

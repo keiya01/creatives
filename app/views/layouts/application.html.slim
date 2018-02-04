@@ -17,22 +17,21 @@ html
            i.fa.fa-angle-down
           = link_to("/posts/index",class: "border-none btn-black") do
             = image_tag("/image/detector_logo.png", class: "logo-image")
-          .point
-           - point = Point.find_by(user_id: @current_user.id)
-           p
-            =point.total
-            span P
+          = link_to("/posts/new",class: "btn-green", remote: true) do
+           p.new-post
+            i.fa.fa-pencil-square-o
+          #point
+           = render partial: "points/point"
         - else
           = link_to("/",class: "border-none btn-black") do
             = image_tag("/image/detector_logo.png", class: "logo-image")
     #header-menu
-      p = link_to("投稿","/posts/new",class: "link", remote: true)
       p = link_to("マイページ","/posts/new",class: "link")
       p = link_to("人気","/posts/new",class: "link")
-      p = link_to("ログアウト", "/logout", method: 'post', class: "link")
       p = link_to("ヘルプ", "/logout", method: 'post', class: "link")
       p = link_to("問い合わせ", "/logout", method: 'post', class: "link")
       p = link_to("利用規約","/posts/new",class: "link")
+      p = link_to("ログアウト", "/logout", method: 'post', class: "link")
     - if flash[:notice]
       #flash
         h3.flash-text= flash[:notice]

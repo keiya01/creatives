@@ -56,9 +56,11 @@ $(document).on('turbolinks:load', function() {
 		if(headLogo.hasClass('fa-angle-down')){
 			headLogo.removeClass('fa-angle-down');
 			headLogo.addClass('fa-angle-up');
+			$('.point').stop(false, true).fadeOut(300);
 			$('#header-menu').stop(false, true).slideDown(300);
 		}else{
 			headLogo.addClass('fa-angle-down');
+			$('.point').stop(false, true).fadeIn(300);
 			$('#header-menu').stop(false, true).slideUp(300);
 		}
 	})

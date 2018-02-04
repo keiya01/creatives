@@ -1,5 +1,6 @@
 $(function(){
 	$("#good").html("<%= j(render 'goods/good') %>");
+	$("#point").html("<%= j(render partial: 'points/point') %>");
 	$(".good-btn").addClass("pushed-good-btn");
     $(".good-btn").children("i").removeClass("fa-thumbs-o-up").addClass("fa-thumbs-up");
 });

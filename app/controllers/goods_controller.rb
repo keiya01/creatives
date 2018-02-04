@@ -12,7 +12,7 @@ class GoodsController < ApplicationController
       format.js
      elsif @remove_point.total == 0
       flash[:notice] = "ポイントが足りません。"
-      redirect_to "/posts/index"
+      format.html{redirect_to "/posts/index"}
      elsif @remove_point.total >= 1
       @good.save
       @remove_point.total -= 1
@@ -22,23 +22,12 @@ class GoodsController < ApplicationController
         format.js
       else
         flash[:notice] = "エラーが発生しました。"
-        redirect_to "/posts/index"
+        format.html{redirect_to "/posts/index"}
       end
      else
       flash[:notice] = "エラーが発生しました。"
-      redirect_to "/posts/index"
+      format.html{redirect_to "/posts/index"}
   	 end
-    end
-  end
-
-  def destroy
-    respond_to do |format|
-      if @good_user
-        @good_user.destroy
-        format.js
-      else
-        format.js
-      end
     end
   end
 

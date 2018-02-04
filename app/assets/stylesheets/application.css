@@ -60,7 +60,7 @@ textarea{
 	color: #333;
 }
 .btn-green{
-	color: #0e5102;
+	color: #009900;
 }
 .border-none{
 	text-decoration: none;
@@ -191,16 +191,23 @@ header{
 	font-size: 18px;
 	color: #0e5102;
 }
-.point{
-	position: fixed;
-	top: 10px;
+.new-post{
+	position: absolute;
+	top: 15px;
 	right: 20px;
-	border: 3px solid #aaa;
-	background-color: #fff;
+	font-size: 22px;
+	z-index: 100;
+}
+.point{
+	position: absolute;
+	top: 55px;
+	right: 8px;
+	border: 1.5px solid #ccc;
+	background-color: rgba(255, 255, 255, 0.95);
 	display: inline-block;
-	padding: 5px 10px;
+	padding: 7px 12px;
 	border-radius: 50px;
-	z-index: 200;
+	z-index: 100;
 }
 .point p{
 	color: #000;
