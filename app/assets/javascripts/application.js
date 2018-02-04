@@ -18,7 +18,7 @@
 //= require turbolinks
 //= require_tree .
 $(document).on('turbolinks:load', function() { 
-
+	// flash slide
 	function headerFlash(flash){
 	  	if($(flash).length){
 			$(flash).slideDown(500);
@@ -30,11 +30,13 @@ $(document).on('turbolinks:load', function() {
 	headerFlash("#flash");
 	headerFlash("#flash-home");
 
+	// form textarea 可変
 	$('.form-tag').on('submit', function () {
         $(this).find('input:submit').prop('disabled', true);
         $("#load").show();
     });
 
+	// loading display
 	$('#top').css('display','none'); //初期状態ではメインコンテンツを非表示
 	$('#home-load').css('display','block'); //ウィンドウの高さに合わせでローディング画面を表示
 	$(window).on('turbolinks:load',function () {
@@ -47,5 +49,19 @@ $(document).on('turbolinks:load', function() {
 			$('#load').fadeOut(1000);
 		}, 1000)
 	});
+
+	// header menu slide
+	$('#header-menu-down').on('click', function(){
+		var headLogo = $(this).children('i');
+		if(headLogo.hasClass('fa-angle-down')){
+			headLogo.removeClass('fa-angle-down');
+			headLogo.addClass('fa-angle-up');
+			$('#header-menu').stop(false, true).slideDown(300);
+		}else{
+			headLogo.addClass('fa-angle-down');
+			$('#header-menu').stop(false, true).slideUp(300);
+		}
+	})
+
 
 });

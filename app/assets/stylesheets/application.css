@@ -92,6 +92,7 @@ textarea{
 	left: 0;
 	text-align: center;
 	background: rgba(0,0,0,0.8);
+	z-index: 100;
 }
 #flash-home{
 	display: none;
@@ -145,11 +146,43 @@ header{
 	height: 30px;
 	margin-top: 10px;
 }
-.new-post{
+#header-menu-down{
 	position: absolute;
-	top: 15px;
-	right: 15px;
-	font-size: 20px;
+	top: 10px;
+	left: 20px;
+	font-size: 30px;
+	color: #009900;
+}
+::-webkit-scrollbar {
+      display: none;
+}
+#header-menu{
+	position: fixed;
+	top: 50px;
+	padding: 0 10px;
+	width: 100%;
+	white-space: nowrap;
+	height: 50px;
+	overflow-x: auto;
+	overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+	background-color: rgb(255, 255, 255);
+	border-bottom: 1px solid #ccc;
+	display: none;
+}
+#header-menu p{
+	display: inline-block;
+	margin: 17px 10px;
+ 	font-size: 13px;
+}
+.link{
+	padding: 7px 10px;
+	border-radius: 5px;
+	vertical-align: top;
+ 	background-color: #0e5102;
+	text-decoration: none;
+	box-shadow: 3px 2px 5px #bbb;
+	color: #fff;
 }
 .back-btn{
 	position: absolute;
@@ -160,19 +193,21 @@ header{
 }
 .point{
 	position: fixed;
-	top: 55px;
+	top: 10px;
 	right: 20px;
-	background-color: #0e5102;
+	border: 3px solid #aaa;
+	background-color: #fff;
 	display: inline-block;
 	padding: 5px 10px;
 	border-radius: 50px;
+	z-index: 200;
 }
 .point p{
-	color: white;
+	color: #000;
 	font-size: 15px;
 	font-weight: bold;
 }
 .point span{
-	color: yellow;
+	color: #009900;
 	padding-left: 5px;
 }
