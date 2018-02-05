@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def create
   	pass = (0...8).map{('a'..'z').to_a[rand(26)]}.join
-  	@user = User.new(name: params[:name], password: params[:password], email: params[:email])
+  	@user = User.new(name: params[:name], password: params[:password], email: params[:email], image: params[:image])
   	if @user.save
       @point = Point.new(user_id: @user.id, total: 10)
       @point.save

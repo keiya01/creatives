@@ -21,7 +21,7 @@
 	padding-top: 15px;
 	padding-left: 10px;
 }
-.title-contents div{
+.hatena-image{
 	font-family: 'terminal';
 	text-align: center;
 	float: right;
@@ -73,7 +73,11 @@
 .post-menu-color{
 	color: #aaa;
 }
-
+.post_image_size{
+	width: 50%;
+	height: 150px;
+	object-fit: contain;
+}
 /* new */
 
 .post-form{

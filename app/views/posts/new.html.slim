@@ -19,7 +19,12 @@ header
   - @post.errors.full_messages.each do |message|
 	 .error-message
 	  p style="color:red" = message
-  = form_tag("/posts/create") do
+  = form_tag("/posts/create", class: "form-tag", multipart: true) do
    input.post-input type="text" name="title" placeholder="アイディアを入力してください。" value="#{@post.title}"
    textarea.post-input.post-text type="text" name="contents" placeholder="概要"　=@post.contents
+   label for="image-file"
+    input#image-file.post-file type="file" name="image"
+    input#image-file.post-file type="hidden" name="image_cache" value="post.image_cache"
    input.input-btn type="submit" value="投稿"
+#load
+ p = image_tag("/image/2.gif")

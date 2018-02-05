@@ -29,14 +29,16 @@ class PostsController < ApplicationController
   end
 
   def create
-  	@post = Post.new(title: params[:title], contents: params[:contents], user_id: @current_user.id)
+  	@post = Post.new(title: params[:title], contents: params[:contents], user_id: @current_user.id, image: params[:image], image_cache: params[:image_cache])
   	if  !@post_time.blank?
   		flash[:notice] = "次の投稿は#{@next_post}から可能です。"
-  		redirect_back(fallback_location: "/posts/index")
+  		redirect_to("/posts/index")
   	elsif @post.save
   		flash[:notice] = "Success!!"
-  		redirect_back(fallback_location: "/posts/index")
-  	end
+  		redirect_to("/posts/index")
+    else
+      render "posts/new"
+    end
   end
 
   private
