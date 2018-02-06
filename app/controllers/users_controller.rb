@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   before_action :brock_current_user, {only:[:login, :login_form, :new, :create]}
 
   def show
+    posts = Post.where(user_id: @user.id).order(created_at: 'DESC')
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(5)
+    goods = Good.where(user_id: @user.id).order(created_at: 'DESC')
+    @goods = Kaminari.paginate_array(goods).page(params[:page]).per(5)
   end
 
   def edit
@@ -30,7 +34,7 @@ class UsersController < ApplicationController
   	pass = (0...8).map{('a'..'z').to_a[rand(26)]}.join
   	@user = User.new(name: params[:name], password: params[:password], email: params[:email], image: params[:image])
   	if @user.save
-      @point = Point.new(user_id: @user.id, total: 10)
+      @point = Point.new(user_id: @user.id, total: 3)
       @point.save
       flash[:notice] = "Thank you!!"
   		session[:user_id] = @user.id

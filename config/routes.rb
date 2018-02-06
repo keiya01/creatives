@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post 'users/login' => 'users#login'
   get 'signup' => 'users#new'
   post 'users/create' => 'users#create'
+  get 'users/:id' => 'users#show'
 
   get '/' => 'home#top'
 

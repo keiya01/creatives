@@ -10,7 +10,7 @@ html
     header
       .header-logo
         - if @current_user
-          = link_to(:back, class: "border-none btn-green") do
+          = link_to("/posts/index", class: "border-none btn-green") do
             p.back-btn
               i.fa.fa-arrow-left
           = link_to("/posts/index",class: "border-none") do

@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def new
   	@post = Post.new
-    render(layout: nil)
+    render(layout: "posts_head")
     respond_to do |format|
         format.html
         format.js
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   		flash[:notice] = "Success!!"
   		redirect_to("/posts/index")
     else
-      render "posts/new"
+      render "posts/new", layout:"posts_head"
     end
   end
 

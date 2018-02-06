@@ -9,8 +9,7 @@
           - if !post.image?
            div.hatena-image !?
           - else
-           div
-            = image_tag(post.image.url, class: "post_image_size")
+           = image_tag(post.image.url, class: "post_image_size")
         .clear-left.clear-right
         .post-menu
           p.good-count

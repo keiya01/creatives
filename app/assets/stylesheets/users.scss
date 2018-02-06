@@ -30,3 +30,75 @@
 	font-size: 16px;
 	color: #FFF;
 }
+
+/* show */
+.user-show-page{
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+.user-image-common{
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	border-radius:50%;
+	margin-top: 100px;
+	margin-bottom: 15px;
+}
+.user-image{
+	object-fit: cover;
+}
+.user-hatena-image{
+	line-height: 65px;
+	color: #fff;
+	font-size: 30px;
+	font-family: 'terminal';
+	font-weight: bold;
+	background-color: #0e5102;
+}
+.user-name{
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+.user-lists{
+	display: inline-block;
+	width: 100%;
+}
+.list-titles{
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+.list-titles p{
+	display: inline-block;
+	padding: 6px 30px;
+}
+.list-title{
+	border-right: 1px solid #ccc;
+}
+.user-post-lists{
+	width: 100%;
+	display: inline-block;
+	height: 100%;
+}
+.user-post{
+	width: 95%;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	height: 100%;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 3px 3px 12px #999;
+}
+.user-post-title{
+	color: #111;
+	font-size: 15px;
+	margin: 10px 0;
+}
+.user-post-image{
+	width: 200px;
+	height: 150px;
+	object-fit: contain;
+	margin-bottom: 10px;
+}

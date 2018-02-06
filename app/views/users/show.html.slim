@@ -1,0 +1,20 @@
+.post-page
+ .user-show-page
+  - if @user.image?
+   =image_tag @user.image.url, class: "user-image user-image-common"
+  - else
+   .user-hatena-image.user-image-common !?
+  h3.user-name = @user.name
+  .user-lists
+   .list-titles
+    p.list-title 投稿
+    p いいね
+   #user-post-lists
+    - @posts.each do |post|
+     = link_to "/posts/#{post.id}", class: "border-none", remote: true
+      .user-post
+       p.user-post-title = post.title
+	   = image_tag post.image.url, class: "user-post-image"
+	   p.user-post-time = simple_time(post.created_at)
+   = paginate @posts
+#post-show

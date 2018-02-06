@@ -125,6 +125,12 @@ textarea{
 	color: #fff;
 	box-shadow: 0 3px #005500;
 }
+.image-file{
+	display: inline-block;
+}
+.image-file input{
+	display: none;
+}
 /* header */
 header{
 	height: 50px;
