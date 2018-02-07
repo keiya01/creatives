@@ -31,9 +31,10 @@ class GoodsController < ApplicationController
     end
   end
 
+private
+
   def pushed_good_user
     @good_user = Good.find_by(user_id: @current_user.id, post_id: params[:post_id])
     @post = Post.find_by(id: params[:post_id])
   end
-
 end

@@ -19,6 +19,9 @@
 	border-radius: 30px;
 	outline: none;
 }
+.user-file{
+	margin-top: 10px;
+}
 .error-flash{
 	text-align: center;
 	color: red;
@@ -39,8 +42,8 @@
 }
 .user-image-common{
 	display: inline-block;
-	height: 60px;
-	width: 60px;
+	height: 70px;
+	width: 70px;
 	border-radius:50%;
 	margin-top: 100px;
 	margin-bottom: 15px;
@@ -49,7 +52,7 @@
 	object-fit: cover;
 }
 .user-hatena-image{
-	line-height: 65px;
+	line-height: 75px;
 	color: #fff;
 	font-size: 30px;
 	font-family: 'terminal';
@@ -85,20 +88,47 @@
 .user-post{
 	width: 95%;
 	margin: 0 auto;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	height: 100%;
-	border: 1px solid #ccc;
 	border-radius: 10px;
-	box-shadow: 3px 3px 12px #999;
+	box-shadow: 3px 1px 10px #ccc;
+	padding: 5px;
 }
 .user-post-title{
 	color: #111;
 	font-size: 15px;
-	margin: 10px 0;
+	padding: 10px 0 10px 0;
+	word-wrap: break-word;
 }
 .user-post-image{
-	width: 200px;
-	height: 150px;
+	width: 80%;
+	height: 130px;
 	object-fit: contain;
 	margin-bottom: 10px;
+}
+.user-post-hatena{
+	font-family: 'terminal';
+	text-align: center;
+	display: inline-block;
+	font-size: 30px;
+	line-height: 130px;
+	font-weight: bold;
+	color: white;
+	width: 80%;
+	height: 130px;
+	background-color: #009900;
+	margin-bottom: 10px;
+}
+.user-post-menu{
+}
+.user-count{
+	float: left;
+	font-size: 20px;
+	color: #00cc00;
+	margin-left: 20px;
+}
+.user-post-time{
+	float: right;
+	font-size: 13px;
+	color: #aaa;
 }

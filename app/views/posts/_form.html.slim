@@ -12,7 +12,6 @@
    input.post-input type="text" name="title" placeholder="アイディアを入力してください。" value="#{@post.title}"
    textarea.post-input.post-text type="text" name="contents" placeholder="概要"　=@post.contents
    input.post-file type="file" name="image"
-   input.post-file type="hidden" name="image_cache"
    input.input-btn type="submit" value="投稿"
 #load
  p = image_tag("/image/2.gif")
