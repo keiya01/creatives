@@ -24,24 +24,24 @@ $(document).on('turbolinks:load', function() {
 			$(flash).slideDown(500);
 			setTimeout(function(){
 				$(flash).slideUp(500);
-			},5000);
+			},3000);
 		};
 	};
 	headerFlash("#flash");
 	headerFlash("#flash-home");
 
-	// form textarea 可変
+	// form textarea
 	$('.form-tag').on('submit', function () {
         $(this).find('input:submit').prop('disabled', true);
         $("#load").show();
     });
 
 	// loading display
-	$('#top').css('display','none'); //初期状態ではメインコンテンツを非表示
-	$('#home-load').css('display','block'); //ウィンドウの高さに合わせでローディング画面を表示
+	$('#top').css('display','none');
+	$('#home-load').css('display','block');
 	$(window).on('turbolinks:load',function () {
-		$('#home-load').delay(1000).fadeOut(1000); //$('#loader-bg').fadeOut(800);でも可
-		$('#top').css('display', 'block'); // ページ読み込みが終わったらメインコンテンツを表示する
+		$('#home-load').delay(1000).fadeOut(1000);
+		$('#top').css('display', 'block');
 		});
 	$('.logout').on('click', function(){
 		$('#load').show();
@@ -63,7 +63,20 @@ $(document).on('turbolinks:load', function() {
 			$('.point').stop(false, true).fadeIn(300);
 			$('#header-menu').stop(false, true).slideUp(300);
 		}
+	});
+
+	// user show menu
+	$('.list-menu').click(function(){
+		if($(this).hasClass('active')){
+			$('.list-menu').css("background-color","#fff");
+			$(this).css("background-color","#eee");
+			$('#show-user-posts').show();
+			$('#show-user-goods').hide();
+		}else{
+			$('.list-menu').css("background-color","#fff");
+			$(this).css("background-color","#eee");
+			$('#show-user-goods').show();
+			$('#show-user-posts').hide();
+		}
 	})
-
-
 });

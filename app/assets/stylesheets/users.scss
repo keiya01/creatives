@@ -70,8 +70,9 @@
 .list-titles{
 	display: inline-block;
 	border: 1px solid #ccc;
-	border-radius: 10px;
 	margin-bottom: 15px;
+	border-radius: 10px;
+	cursor: pointer;
 }
 .list-titles p{
 	display: inline-block;
@@ -79,13 +80,20 @@
 }
 .list-title{
 	border-right: 1px solid #ccc;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: #eee;
+}
+.list-good{
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 .user-post-lists{
 	width: 100%;
 	display: inline-block;
 	height: 100%;
 }
-.user-post{
+.user-post-style{
 	width: 95%;
 	margin: 0 auto;
 	margin-bottom: 10px;
@@ -131,4 +139,7 @@
 	float: right;
 	font-size: 13px;
 	color: #aaa;
+}
+#show-user-goods{
+	display: none;
 }

@@ -1,0 +1,17 @@
+- @goods.each do |good|
+ .user-post-style.user-good
+  = link_to "/posts/#{good.id}", class: "border-none", remote: true do
+   p.user-post-title = good.title
+   - if good.image?
+    = image_tag good.image.url, class: "user-post-image"
+   - else
+    div.user-post-hatena !?
+   .user-post-menu
+    p.user-count
+     i.fa.fa-thumbs-up
+     = good.goods_count
+    p.user-post-time = simple_time(good.created_at)
+    p.user-count
+     i.fa.fa-comment
+     = good.comments_count
+   .clear-left

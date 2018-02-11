@@ -7,26 +7,15 @@
   h3.user-name = @user.name
   .user-lists
    .list-titles
-    p.list-title 投稿
-    p いいね
-   #user-post-lists
-    - @posts.each do |post|
-     = link_to "/posts/#{post.id}", class: "border-none", remote: true
-      .user-post
-       p.user-post-title = post.title
-       - if post.image?
-	    = image_tag post.image.url, class: "user-post-image"
-	   - else
-	    div.user-post-hatena !?
-	   .user-post-menu
-        p.user-count
-         i.fa.fa-thumbs-up
-         = post.goods_count
-        p.user-post-time = simple_time(post.created_at)
-        p.user-count
-         i.fa.fa-comment
-         = post.comments_count
-       .clear-left
-   = paginate @posts
+    p.list-title.list-menu.active 投稿
+    p.list-menu.list-good いいね
+   #show-user-posts
+    #user-post-lists
+     =render partial: 'user_posts'
+    = paginate @posts
+   #show-user-goods
+    #user-good-lists
+     =render partial: 'user_goods'
+    = paginate @goods
 #post-show
 #new-form

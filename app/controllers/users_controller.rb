@@ -6,9 +6,14 @@ class UsersController < ApplicationController
 
   def show
     posts = Post.where(user_id: @user.id).order(created_at: 'DESC')
-    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(5)
-    goods = Good.where(user_id: @user.id).order(created_at: 'DESC')
-    @goods = Kaminari.paginate_array(goods).page(params[:page]).per(5)
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(4)
+    goods = Good.where(user_id: @user.id)
+    good_posts = []
+    goods.each do |good|
+      post = Post.find_by(id: good.post_id)
+      good_posts.push(post)
+    end
+    @goods = Kaminari.paginate_array(good_posts).page(params[:page]).per(4)
   end
 
   def edit
