@@ -1,0 +1,25 @@
+.post-page
+ .rank-contents
+  - @ranks.each.with_index(1) do |rank,i|
+   - if i == 1
+    p.rank-top-post
+     i.fa.fa-star
+     = "NO.#{i}"
+   - else
+    p.rank-notop-post = "NO.#{i}"
+   .rank-content
+    p.rank-title = rank.title
+    - if rank.image?
+     = image_tag rank.image.url, class: "rank-image"
+    - else
+     div.rank-post-hatena !?
+    p.rank-user-name = rank.user.name
+    .rank-menu
+     p.rank-good-count.rank-item
+      i.fa.fa-thumbs-up
+      = rank.goods_count
+     p.rank-post-count.rank-item
+      i.fa.fa-comment
+      = rank.comments_count
+     p.rank-time = simple_time(rank.created_at)
+    .clear-left

@@ -14,4 +14,8 @@ class Post < ApplicationRecord
 	def goods_count
 		return Good.where(post_id: self.id).count
 	end
+
+	def user
+		return User.find_by(id: self.user_id)
+	end
 end

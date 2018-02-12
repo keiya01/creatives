@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   def rank
+    @ranks = Post.find(Good.group(:post_id).order('count(post_id) desc').limit(10).pluck(:post_id))
   end
 
   def new
