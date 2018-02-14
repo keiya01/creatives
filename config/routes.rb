@@ -12,13 +12,11 @@ Rails.application.routes.draw do
   get 'posts/:id' => 'posts#show'
 
   post 'logout' => 'users#logout'
-  get 'login' => 'users#login_form'
-  post 'users/login' => 'users#login'
-  get 'signup' => 'users#new'
-  post 'users/create' => 'users#create'
   get 'users/:id' => 'users#show'
 
-  get '/' => 'home#top'
+  get '/auth/:provider/callback' => 'sessions#create'
+
+  root 'home#top'
   get 'agreement' => 'home#agreement'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

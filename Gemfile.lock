@@ -66,6 +66,10 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18-x86-mingw32)
@@ -73,6 +77,7 @@ GEM
       railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashie (3.5.7)
     hirb (0.7.3)
     hirb-unicode (0.0.5)
       hirb (~> 0.5)
@@ -108,6 +113,16 @@ GEM
     nio4r (2.2.0)
     nokogiri (1.8.1-x86-mingw32)
       mini_portile2 (~> 2.3.0)
+    oauth (0.5.4)
+    omniauth (1.8.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (1.4.0)
+      omniauth-oauth (~> 1.1)
+      rack
     pg (0.21.0-x86-mingw32)
     public_suffix (3.0.1)
     puma (3.11.2)
@@ -204,6 +219,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   carrierwave
   coffee-rails (~> 4.2)
+  dotenv-rails
   font-awesome-rails
   hirb
   hirb-unicode
@@ -211,6 +227,8 @@ DEPENDENCIES
   jquery-rails (~> 4.3, >= 4.3.1)
   jquery-turbolinks
   kaminari (~> 0.17.0)
+  omniauth
+  omniauth-twitter
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)

@@ -1,8 +1,6 @@
 .top
  h1 Yapy
  p アイディアを形にしよう
- .btn
-  p = link_to("SignUp", "/signup", class: "btn-white top-btn border-none")
-  p = link_to("LogIn", "/login", class: "btn-white top-btn border-none")
+ p.twitter = link_to 'Twitterでログイン', '/auth/twitter', class: "twitter-btn border-none"
 #home-load
  p = image_tag "Preloader_7.gif"

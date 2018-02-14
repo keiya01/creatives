@@ -4,7 +4,7 @@
       - user = User.find_by(id: comment.user_id)
       .comment
         .comment-menu
-          =image_tag user.image.url, class: "comment-image"
+          =image_tag user.image_url.url, class: "comment-image"
           p.comment-name= user.name
           p.comment-time= simple_time(comment.created_at)
         .clear-left

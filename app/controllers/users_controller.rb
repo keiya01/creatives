@@ -24,51 +24,15 @@ class UsersController < ApplicationController
   		render("users/edit")
   	end
   end
-  
-  def new
-  	@user = User.new
-  	render :layout => 'home'
-  end
 
-  def create
-  	pass = (0...8).map{('a'..'z').to_a[rand(26)]}.join
-  	@user = User.new(name: params[:name], password: params[:password], email: params[:email], image: params[:image])
-  	if @user.save
-      @point = Point.new(user_id: @user.id, total: 3)
-      @point.save
-      flash[:notice] = "Thank you!!"
-  		session[:user_id] = @user.id
-      redirect_to "/posts/index"
-  	else
-  		flash[:notice] = "Uncorrect!!"
-  		render("users/new", :layout => "home")
-  	end
-  end
-
-  def login_form
-  	render :layout => 'home'
-  end
-
-  def login
-  	@user = User.find_by(email: params[:email], password: params[:password])
-  	if @user
-  		session[:user_id] = @user.id
-  		flash[:notice] = "Success!!"
-  		redirect_to("/posts/index")
-  	else
-  		flash[:error] = "メールアドレスまたはパスワードが違います。"
-  		redirect_to("/login")
-  	end
-  end
-
-    def logout
-      @user = User.find_by(id: session[:user_id])
-      if @user
-        session[:user_id] = nil
-        flash[:notice] = "Good bye."
-        redirect_to('/')
-      end
+  def logout
+    @user = User.find_by(id: session[:user_id])
+    if @user
+     session[:user_id] = nil
+     flash[:notice] = "Good bye."
+     redirect_to('/')
     end
+  end
 
 private
 
