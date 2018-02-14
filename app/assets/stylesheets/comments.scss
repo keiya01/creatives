@@ -61,16 +61,29 @@
 .comment-menu{
 	width: 95%;
 	margin: 0 auto;
+	position: relative;
+}
+.comment-image{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	float: left;
+	margin-left: 5px;
+	object-fit: cover;
 }
 .comment-name{
 	float: left;
 	font-size: 15px;
 	font-weight: bold;
+	margin-top: 10px;
+	margin-left: 5px;
 }
 .comment-time{
-	float: right;
-	font-size: 13px;
+	float: left;
+	font-size: 12px;
 	color: #bbb;
+	margin-top: 15px;
+	margin-left: 20px;
 }
 .comment-contents{
 	font-size: 15px;

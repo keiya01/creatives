@@ -50,3 +50,50 @@
 	margin: 0 auto;
 	margin-top: 200px;
 }
+
+/* agreement */
+.agreement-title{
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	margin: 50px 0;
+	color: #009900;
+}
+.agreement-text{
+	width: 90%;
+	margin: 0 auto;
+	font-size: 13px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.agreement{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+	background-color: #eee;
+}
+.agreement h3{
+	padding-top: 20px;
+	font-size: 18px;
+}
+.agreement p{
+	padding-top: 10px;
+	font-size: 13px;
+}
+.agreement h5{
+	font-size: 13px;
+	padding: 10px 0;
+}
+.back-top-btn{
+	color: white;
+	font-size: 15px;
+	float: right;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	background-color: #009900;
+	padding: 5px 10px;
+	border-radius: 20px;
+}
