@@ -16,7 +16,7 @@ html
           p#header-menu-down
            i.fa.fa-angle-down
           = link_to("/posts/index",class: "border-none btn-black") do
-            = image_tag("/image/detector_logo.png", class: "logo-image")
+            = image_tag("detector_logo.png", class: "logo-image")
           = link_to("/posts/new",class: "btn-green", remote: true) do
            p.new-post
             i.fa.fa-pencil-square-o
@@ -24,7 +24,7 @@ html
            = render partial: "points/point"
         - else
           = link_to("/",class: "border-none btn-black") do
-            = image_tag("/image/detector_logo.png", class: "logo-image")
+            = image_tag("detector_logo.png", class: "logo-image")
     #header-menu
       p = link_to("マイページ","/users/#{@current_user.id}",class: "link")
       p = link_to("人気","/rank",class: "link")
@@ -36,5 +36,5 @@ html
       #flash
         h3.flash-text= flash[:notice]
     #load
-     p = image_tag("/image/2.gif")
+     p = image_tag("2.gif")
   = yield

@@ -5,10 +5,10 @@ body
         p.back-btn
           i.fa.fa-arrow-left
         = link_to("/posts/index",class: "border-none") do
-          = image_tag("/image/detector_logo.png", class: "logo-image")
+          = image_tag("detector_logo.png", class: "logo-image")
       - else
         = link_to("/",class: "border-none btn-black") do
-          = image_tag("/image/detector_logo.png", class: "logo-image")
+          = image_tag("detector_logo.png", class: "logo-image")
   - if @current_user
   .show-page
     .post-show

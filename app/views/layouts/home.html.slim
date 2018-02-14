@@ -6,10 +6,11 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
   body
    - if flash[:notice]
     #flash-home
      h3.flash-text= flash[:notice]
    #load
-    p = image_tag("/image/2.gif")
+    p = image_tag("2.gif")
   = yield

@@ -6,6 +6,7 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
   body
     header
       .header-logo
@@ -14,10 +15,10 @@ html
             p.back-btn
               i.fa.fa-arrow-left
           = link_to("/posts/index",class: "border-none") do
-            = image_tag("/image/detector_logo.png", class: "logo-image")
+            = image_tag("detector_logo.png", class: "logo-image")
         - else
           = link_to("/",class: "border-none btn-black") do
-            = image_tag("/image/detector_logo.png", class: "logo-image")
+            = image_tag("detector_logo.png", class: "logo-image")
     - if flash[:notice]
       #flash
         h3.flash-text= flash[:notice]
