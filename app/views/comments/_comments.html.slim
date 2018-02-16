@@ -5,7 +5,7 @@
       .comment
         .comment-menu
           =image_tag user.image_url.url, class: "comment-image"
-          p.comment-name= user.name
+          p.comment-name= user.username
           p.comment-time= simple_time(comment.created_at)
         .clear-left
         p.comment-contents= comment.contents

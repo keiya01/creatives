@@ -1,10 +1,10 @@
 .post-page
  .user-show-page
-  - if @user.image?
-   =image_tag @user.image_url.url, class: "user-image user-image-common"
+  - if !@user.image_url.blank?
+   =image_tag @user.image_url, class: "user-image user-image-common"
   - else
    .user-hatena-image.user-image-common !?
-  h3.user-name = @user.name
+  h3.user-name = @user.username
   .user-lists
    .list-titles
     p.list-title.list-menu.active 投稿

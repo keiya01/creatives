@@ -27,7 +27,8 @@ html
           = link_to("/",class: "border-none btn-black") do
             = image_tag("detector_logo.png", class: "logo-image")
     #header-menu
-      p = link_to("マイページ","/users/#{@current_user.id}",class: "link")
+      - if @current_user
+       p = link_to("マイページ","/users/#{@current_user.id}",class: "link")
       p = link_to("人気","/rank",class: "link")
       p = link_to("ヘルプ", "/logout", method: 'post', class: "link")
       p = link_to("問い合わせ", "/logout", method: 'post', class: "link")

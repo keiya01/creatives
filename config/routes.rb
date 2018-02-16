@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   post 'logout' => 'users#logout'
   get 'users/:id' => 'users#show'
-  get '/auth/:provider/callback' => 'users#create'
+  get 'auth/:provider/callback' => 'users#create'
 
   root 'home#top'
   get 'agreement' => 'home#agreement'
