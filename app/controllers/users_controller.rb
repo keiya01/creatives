@@ -27,17 +27,6 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def update
-  	@user.name = params[:name]
-  	@user.email = params[:email]
-  	if @user.save
-  		flash[:notice] = "Success!!"
-  		redirect_to("/users/#{@user.id}")
-  	else
-  		render("users/edit")
-  	end
-  end
-
   def logout
     @user = User.find_by(id: session[:user_id])
     if @user
