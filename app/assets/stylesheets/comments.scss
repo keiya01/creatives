@@ -71,6 +71,20 @@
 	margin-left: 5px;
 	object-fit: cover;
 }
+.comment-hatena-image{
+	width: 40px;
+	height: 40px;
+	line-height: 45px;
+	border-radius: 50%;
+	float: left;
+	text-align: center;
+	margin-left: 5px;
+	color: #fff;
+	font-size: 20px;
+	font-family: 'terminal';
+	font-weight: bold;
+	background-color: #0e5102;
+}
 .comment-name{
 	float: left;
 	font-size: 15px;

@@ -16,6 +16,8 @@
  /*
  *= require font-awesome
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 *{
 	box-sizing: border-box;
 }
@@ -165,6 +167,7 @@ header{
 #header-menu{
 	position: fixed;
 	top: 50px;
+	z-index: 50;
 	padding: 0 10px;
 	width: 100%;
 	white-space: nowrap;

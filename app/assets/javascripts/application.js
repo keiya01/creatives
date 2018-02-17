@@ -15,6 +15,8 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.infinitescroll
+//= require bootstrap-sprockets
+//= require data-confirm-modal
 //= require turbolinks
 //= require_tree .
 $(document).on('turbolinks:load', function() { 

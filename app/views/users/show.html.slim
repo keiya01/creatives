@@ -1,10 +1,11 @@
 .post-page
  .user-show-page
-  - if !@user.image_url.blank?
+  - if @user.image_url?
    =image_tag @user.image_url, class: "user-image user-image-common"
   - else
    .user-hatena-image.user-image-common !?
   h3.user-name = @user.username
+  P.edit-link = link_to "編集する", "/users/#{@user.id}/edit", class: "edit-link-color"
   .user-lists
    .list-titles
     p.list-title.list-menu.active 投稿

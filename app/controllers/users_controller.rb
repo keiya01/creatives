@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :user_find, {only:[:show, :edit, :update, :login_form]}
+  before_action :user_find, {only:[:show, :edit, :update, :login_form, :destroy]}
   before_action :brock_not_current_user, {only:[:edit, :update]}
   before_action :uncorrect_user_brock, {only:[:edit, :update]}
   before_action :brock_current_user, {only:[:login, :login_form, :new, :create]}
@@ -14,17 +14,35 @@ class UsersController < ApplicationController
   def create
     user = User.find_or_create_from_auth_hash(request.env['omniauth.auth'])
     if user
-      @point = Point.new(user_id: user.id, total: 3)
-      @point.save
+      if !Point.find_by(user_id: user.id)
+        @point = Point.new(user_id: user.id, total: 3)
+        @point.save
+      end
       session[:user_id] = user.id
-      redirect_to root_path, notice: "ログインしました。"
+      redirect_to '/posts/index', notice: "ログインしました。"
     else
-      flash[:notice] = "Uncorrect!!"
-      render("users/new", :layout => "home")
+      redirect_to root_path, notice: "失敗しました。"
     end
   end
 
   def edit
+  end
+
+  def update
+    if @user
+      @user.username = params[:name]
+      @user.image_url = params[:image]
+      redirect_to("/users/#{@user.id}", notice: "編集しました。") if @user.save
+    end
+  end
+
+  def destroy
+    if @current_user
+      if @current_user.destroy
+        session[:user_id] = nil
+        redirect_to('/', notice: "ありがとうございました。")
+      end
+    end
   end
 
   def logout
@@ -46,6 +64,6 @@ private
   end
 
   def user_find
-  	@user = User.find_by(id: params[:id])
+  	@user = User.find(params[:id])
   end
 end

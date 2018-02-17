@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'posts/:id' => 'posts#show'
 
   post 'logout' => 'users#logout'
+  get 'users/:id/edit' => 'users#edit'
+  post 'users/:id/update' => 'users#update'
+  post 'users/:id/destroy' => 'users#destroy'
   get 'users/:id' => 'users#show'
   get 'auth/:provider/callback' => 'users#create'
 

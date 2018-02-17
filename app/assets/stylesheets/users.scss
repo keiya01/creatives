@@ -63,6 +63,10 @@
 	font-size: 25px;
 	margin-bottom: 20px;
 }
+.edit-link{
+	margin-bottom: 15px;
+	font-size: 15px;
+}
 .user-lists{
 	display: inline-block;
 	width: 100%;
@@ -142,4 +146,44 @@
 }
 #show-user-goods{
 	display: none;
+}
+
+/* edit */
+
+.edit-page{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #eee;
+	padding-top: 160px;
+}
+.edit-contents{
+	width: 95%;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 20px;
+	padding: 40px 10px 20px 10px;
+	text-align: center;
+}
+.edit-contents h3{
+	font-size: 18px;
+	color: #aaa;
+	margin-bottom: 30px;
+}
+.edit-name{
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px 10px;
+	width: 100%;
+	margin-bottom: 30px;
+	border: 1px solid #ccc;
+}
+.edit-image{
+	margin-bottom: 15px;
+}
+.user-destroy{
+	font-size: 15px;
+	margin-top: 40px;
 }

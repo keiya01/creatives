@@ -14,7 +14,7 @@ html
           = link_to("/posts/index", class: "border-none btn-green") do
             p.back-btn
               i.fa.fa-arrow-left
-          = link_to("/posts/index",class: "border-none") do
+          = link_to(:back, class: "border-none") do
             = image_tag("detector_logo.png", class: "logo-image")
         - else
           = link_to("/",class: "border-none btn-black") do

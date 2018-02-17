@@ -18,6 +18,8 @@ gem 'pg', '~> 0.18', group: :production
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass'
+gem 'data-confirm-modal'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'jquery-turbolinks'
 gem 'font-awesome-rails'

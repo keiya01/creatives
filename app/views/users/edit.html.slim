@@ -1,0 +1,8 @@
+.edit-page
+ .edit-contents
+  h3 編集内容を入力してください。
+  = form_tag("/users/#{@user.id}/update", multipart: true) do
+   input.edit-name type="text" name="name" placeholder="Name" value="#{@user.username}"
+   input.edit-image type="file" name="image"
+   input.input-btn type="submit" value="編集"
+  p.user-destroy = link_to "アカウントを削除", "/users/#{@user.id}/destroy", method: 'post', data: {confirm: "削除してもよろしいですか？", verify: "#{@user.username}", verify_text: "削除する場合は「User Name」を入力してください", cancel: "やめる", commit: "削除する"}, title: "確認メッセージ"
