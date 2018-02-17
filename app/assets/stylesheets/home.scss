@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .top{
-	height: 650px;
-	width: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	text-align: center;
 	color: white;
 	background: linear-gradient(to left top,#00ff00 20%,#0000ff);
@@ -13,20 +16,24 @@
 	font-size: 65px;
 	font-family: Impact,Charcoal;
 }
-.top p{
+.top-text{
 	font-size: 17px;
 	padding-top: 20px;
 }
 .twitter{
-	margin-top: 50px;
-}
-.twitter-btn{
+	line-height: 40px;
+	display: inline-block;
+	height: 40px;
+	padding: 0 10px;
 	background-color: #00aced;
-	padding: 10px 15px;
 	border-radius: 5px;
-	font-size: 18px;
+	font-size: 15px;
 	color: #fff;
-	font-weight: 600;
+	margin-top: 80px;
+}
+.twitter i{
+	font-size: 20px;
+	padding-right: 10px;
 }
 .top-btn{
 	border: 2px solid white;

@@ -29,12 +29,13 @@
 .comment-input-btn{
 	outline: none;
 	float: left;
-	margin-left: 10px;
+	margin-left: 5px;
 	background-color: #009900;
 	border: #009900;
-	border-radius: 50px;
+	border-radius: 30px;
 	padding: 3px 10px;
 	color: #fff;
+	font-size: 13px;
 }
 .comment-text{
 	font-size: 13px;
@@ -113,5 +114,11 @@
 	color: #aaa;
 	text-align: center;
 }
-
-
+@media screen and (min-width: 320px){
+	.comment-form{
+		padding: 20px;
+	}
+	.comment-input-btn{
+		font-size: 15px;
+	}
+}

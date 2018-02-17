@@ -12,7 +12,7 @@
      .rank-content
       p.rank-title = rank.title
       - if rank.image?
-       = image_tag rank.image.url, class: "rank-image"
+       = image_tag rank.image_url.url, class: "rank-image"
       - else
        div.rank-post-hatena !?
       p.rank-user-name = rank.user.username

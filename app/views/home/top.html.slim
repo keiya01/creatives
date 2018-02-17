@@ -1,6 +1,9 @@
 .top
  h1 Yapy
- p アイディアを形にしよう
- p.twitter = link_to 'Twitterでログイン', '/auth/twitter', class: "twitter-btn border-none"
+ p.top-text アイディアを形にしよう
+ = link_to '/auth/twitter', class: "border-none" do
+  p.twitter
+   i.fa.fa-twitter
+   | Twitterアカウントでログイン
 #home-load
  p = image_tag "Preloader_7.gif"
