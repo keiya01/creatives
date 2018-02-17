@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hlj6rh2jp
+  api_key: '415528555168838'
+  api_secret: rYNkiHKuIpexyFPRItsOy0O_OWc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hlj6rh2jp
+  api_key: '415528555168838'
+  api_secret: rYNkiHKuIpexyFPRItsOy0O_OWc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hlj6rh2jp
+  api_key: '415528555168838'
+  api_secret: rYNkiHKuIpexyFPRItsOy0O_OWc
+  enhance_image_tag: true
+  static_image_support: false
