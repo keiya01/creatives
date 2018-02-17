@@ -18,8 +18,9 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   get 'auth/:provider/callback' => 'users#create'
 
-  root 'home#top'
+  get 'use' => 'home#use'
   get 'agreement' => 'home#agreement'
+  root 'home#top'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

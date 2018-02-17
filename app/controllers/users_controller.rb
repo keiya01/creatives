@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :user_find, {only:[:show, :edit, :update, :login_form, :destroy]}
-  before_action :brock_not_current_user, {only:[:edit, :update]}
+  before_action :brock_not_current_user, {only:[:edit, :update, :logout, :destroy]}
   before_action :uncorrect_user_brock, {only:[:edit, :update]}
-  before_action :brock_current_user, {only:[:login, :login_form, :new, :create]}
+  before_action :brock_current_user, {only:[:create]}
 
   def show
     posts = Post.where(user_id: @user.id).order(created_at: 'DESC')
