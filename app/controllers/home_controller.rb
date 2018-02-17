@@ -8,6 +8,6 @@ class HomeController < ApplicationController
   def agreement
   end
 
-  def use
+  def how_to_use
   end
 end
