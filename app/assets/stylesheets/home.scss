@@ -168,3 +168,10 @@
 	font-size: 15px;
 	color: #fff;
 }
+
+@media screen and (min-width: 480px){
+	.top-agreement{
+		width: 100%;
+		text-align: center;
+	}
+}

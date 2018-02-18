@@ -17,7 +17,7 @@ class GoodsController < ApplicationController
       @good.save
       @remove_point.total -= 1
       if @remove_point.save
-        @add_point.total += 0.5
+        @add_point.total += 1
         @add_point.save
         format.js
       else
