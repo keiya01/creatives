@@ -30,8 +30,7 @@ html
       - if @current_user
        p = link_to("マイページ","/users/#{@current_user.id}",class: "link")
       p = link_to("人気","/rank",class: "link")
-      p = link_to("ヘルプ", "/logout", method: 'post', class: "link")
-      p = link_to("問い合わせ", "/logout", method: 'post', class: "link")
+      p = link_to("使い方", "/how_to_use", class: "link")
       p = link_to("利用規約","/agreement",class: "link")
       p = link_to("ログアウト", "/logout", method: 'post', class: "link")
     - if flash[:notice]

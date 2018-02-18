@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback' => 'users#create'
 
   get 'how_to_use' => 'home#how_to_use'
+  post 'how_to_use' => 'home#new_user'
   get 'agreement' => 'home#agreement'
   root 'home#top'
 

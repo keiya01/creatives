@@ -23,7 +23,6 @@
 }
 a:hover{
 	text-decoration: none;
-	color: #fff;
 }
 body {
 font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
@@ -136,6 +135,9 @@ textarea{
 	color: #fff;
 	box-shadow: 0 3px #005500;
 }
+.input-btn:hover{
+	color: #fff;
+}
 .image-file{
 	display: inline-block;
 }
@@ -200,6 +202,9 @@ header{
  	background-color: #0e5102;
 	text-decoration: none;
 	box-shadow: 3px 2px 5px #bbb;
+	color: #fff;
+}
+.link:hover{
 	color: #fff;
 }
 .back-btn{

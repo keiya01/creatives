@@ -1,6 +1,10 @@
 .top
  h1 Yapy
  p.top-text アイディアを形にしよう
+ p.top-agreement
+  | 登録することで
+  = link_to "利用規約", "/agreement"
+  | に同意したものとみなします。
  = link_to '/auth/twitter', class: "border-none" do
   p.twitter
    i.fa.fa-twitter

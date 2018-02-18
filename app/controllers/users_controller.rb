@@ -15,11 +15,16 @@ class UsersController < ApplicationController
     user = User.find_or_create_from_auth_hash(request.env['omniauth.auth'])
     if user
       if !Point.find_by(user_id: user.id)
+        session[:new_user] = user.id
         @point = Point.new(user_id: user.id, total: 3)
         @point.save
       end
       session[:user_id] = user.id
-      redirect_to '/posts/index', notice: "ログインしました。"
+      if session[:new_user]
+       redirect_to '/how_to_use', notice: "ご登録ありがとうございます。"
+      else
+       redirect_to '/posts/index', notice: "ログインしました。"
+      end
     else
       redirect_to root_path, notice: "失敗しました。"
     end
