@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'comments/:post_id/index' => 'comments#index'
   post 'comments/:post_id/create' => 'comments#create'
+  post 'comments/:post_id/destroy' => 'comments#destroy'
 
   post 'goods/:post_id/create' => 'goods#create'
 

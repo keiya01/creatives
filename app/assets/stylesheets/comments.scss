@@ -4,11 +4,7 @@
 .comment{
 	width: 100%;
 	border-bottom: 1px solid #ccc;
-	margin-top: 20px;
-}
-.comment-menu{
-	width: 95%;
-	margin: 0 auto;
+	padding-top: 10px;
 }
 .comment-image{
 	width: 40px;
@@ -40,24 +36,30 @@
 	margin-left: 5px;
 	word-wrap: break-word;
 }
-.comment-time{
-	float: left;
-	font-size: 12px;
-	color: #bbb;
-	margin-top: 13px;
-	margin-left: 20px;
-}
 .comment-contents{
 	font-size: 15px;
 	width: 95%;
 	margin: 0 auto;
-	margin-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 10px;
 	word-wrap: break-word;
 }
 .comment-blank{
 	font-size: 15px;
-	margin-top: 50px;
+	margin-top: 20px;
 	color: #aaa;
 	text-align: center;
+}
+.comment-menu{
+	width: 100%;
+}
+.comment-time{
+	float: left;
+	font-size: 13px;
+	color: #bbb;
+	margin-left: 10px;
+}
+.comment-destroy{
+	float: left;
+	font-size: 13px;
+	margin-left: 10px;
 }

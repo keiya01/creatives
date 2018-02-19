@@ -4,15 +4,20 @@
       - user = User.find_by(id: comment.user_id)
       - post = Post.find_by(id: comment.post_id)
       .comment
+       -if user.image_url? && user.id != post.user_id
+        =image_tag user.image_url.url, class: "comment-image"
+       -else
+        div.comment-hatena-image !?
+       -if user.id != post.user_id
+        p.comment-name= user.username
+       - else
+        p.comment-name 投稿主
+       .clear-left
+        p.comment-contents= text_url_to_link(h(raw(comment.contents.gsub(/\n/, '<br>')))).html_safe
        .comment-menu
-        -if user.image_url? && user.id != post.user_id
-         =image_tag user.image_url.url, class: "comment-image"
-        -else
-         div.comment-hatena-image !?
-        -if user.id != post.user_id
-         p.comment-name= user.username
         p.comment-time= simple_time(comment.created_at)
+        - if @current_user.id == post.user_id
+         p.comment-destroy = link_to "削除", "/comments/#{comment.id}/destroy", method: 'post', remote: true,data: {confirm: "削除してもよろしいですか？", cancel: "やめる", commit: "削除する"}, title: "確認メッセージ"
         .clear-left
-       p.comment-contents= text_url_to_link(h(raw(comment.contents.gsub(/\n/, '<br>')))).html_safe
 - else
   h3.comment-blank コメントがありません。
