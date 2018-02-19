@@ -6,9 +6,9 @@ class UsersController < ApplicationController
 
   def show
     posts = Post.where(user_id: @user.id).order(created_at: 'DESC')
-    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(10)
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(15)
     post_goods = Post.joins(:goods).where(goods: {user_id: @user.id}).order(created_at: 'DESC')
-    @goods = Kaminari.paginate_array(post_goods).page(params[:page]).per(10)
+    @goods = Kaminari.paginate_array(post_goods).page(params[:page]).per(15)
   end
 
   def create

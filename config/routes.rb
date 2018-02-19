@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   get 'auth/:provider/callback' => 'users#create'
 
+  get 'contacts/new' => 'contacts#new'
+  post 'contacts/create' => 'contacts#create'
+  get 'contacts/index' => 'contacts#index'
+
   get 'how_to_use' => 'home#how_to_use'
   post 'how_to_use' => 'home#new_user'
   get 'agreement' => 'home#agreement'

@@ -37,12 +37,12 @@
     | の範囲でお願いします。
     br
     | ・試作段階のため、不具合があるかと思います。その際は
-    = link_to "利用規約", "/agreement"
-    | から連絡をいただければと思います。
+    = link_to "手紙",'/contacts/new'
+    | をいただければと思います。
     br
     | ・このサービスへの不満や提案などがございましたら、
-    = link_to "提案", "/"
-    | から連絡をいただければサービス向上のための意見として役立たせていただきます！
+    = link_to "手紙", "/contacts/new"
+    | をいただければサービス向上のための意見として役立たせていただきます！
  - if session[:new_user]
   = link_to "/how_to_use", method: 'post' do
    p.how-to-btn OK!!

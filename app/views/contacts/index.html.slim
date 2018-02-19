@@ -1,0 +1,8 @@
+.contact-index-page
+ h3 手紙一覧
+ - @contacts.each do |contact|
+  .contact
+   p.contact-text = text_url_to_link(h(raw(contact.contents.gsub(/\n/, '<br>')))).html_safe
+   br
+   p.contact-time = simple_time(contact.created_at)
+ = paginate @contacts

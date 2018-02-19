@@ -4,7 +4,7 @@
 $(document).on 'turbolinks:load', ->
   $(".page .posts-list").infinitescroll
     loading: {
-      img:     "/image/Preloader_2.gif"
+      img:     "/images/Preloader_2.gif"
       msgText: ""
       finishedMsg: ""
     }

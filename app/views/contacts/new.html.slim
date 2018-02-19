@@ -1,0 +1,7 @@
+.contact-page
+ .contact-form
+  h3 手紙
+  = form_tag "/contacts/create"
+   textarea name="contents"
+    = @contact.contents
+   input.input-btn type="submit"
