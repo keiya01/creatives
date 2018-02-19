@@ -30,11 +30,12 @@
 	float: right;
 	display: inline-block;
 	font-size: 50px;
-	line-height: 130px;
+	line-height: 125px;
 	font-weight: bold;
 	color: white;
-	width: 50%;
-	height: 130px;
+	width: 48%;
+	height: 125px;
+	margin-left: 2%;
 	background-color: #009900;
 }
 .title-contents h3{
@@ -123,31 +124,36 @@
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
 	background-color: #fff;
 }
 .post-show{
 	padding-top: 100px;
-	width: 90%;
+	width: 100%;
 	height: 100%;
 	margin: 0 auto;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
 }
 .post-show-title{
+	width: 95%;
+	margin: 0 auto;
 	font-size: 25px;
 	margin-top: 20px;
 	margin-bottom: 40px;
 	word-wrap: break-word;
 }
 .post-show-contents{
+	width: 95%;
+	margin: 0 auto;
 	font-size: 15px;
 	word-wrap: break-word;
+	padding-bottom: 20px;
 }
 .select-evaluation{
+	bottom: 0;
 	width: 100%;
 	border-top: 1px solid #bbb;
 	padding: 20px 0;
-	margin-top: 50px;
 	float: left;
 }
 .select-btn-black{
