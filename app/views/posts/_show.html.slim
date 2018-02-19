@@ -15,7 +15,7 @@ body
       p.post-time= simple_time(@post.created_at)
       .clear-right
       h2.post-show-title= @post.title
-      p.post-show-contents= raw(@post.contents.gsub(/\n/, '<br>'))
+      p.post-show-contents= text_url_to_link(h(raw(@post.contents.gsub(/\n/, '<br>')))).html_safe
       .select-evaluation
        - @good_user = Good.find_by(user_id: @current_user.id, post_id: @post.id)
        - @good_count = Good.where(post_id: @post.id).count

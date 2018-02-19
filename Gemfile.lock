@@ -177,6 +177,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rinku (2.0.4)
     rubyzip (1.2.1)
     sass (3.5.5)
       sass-listen (~> 4.0.0)
@@ -259,6 +260,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rinku
   sass-rails (~> 5.0)
   selenium-webdriver
   slim-rails (= 3.1.3)
