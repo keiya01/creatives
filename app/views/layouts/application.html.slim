@@ -1,12 +1,12 @@
 doctype html
 html
   head
-    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
-    title Yapy
-    = csrf_meta_tags
-    meta charset="UTF-8" /
+    meta charset="UTF-8"
     meta content="アイディアのSNS" name="Yapy" /
     meta name="viewport" content="width=device-width,initial-scale=1"
+    title Yapy
+
+    = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'

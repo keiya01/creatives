@@ -4,19 +4,21 @@
     -comment = Comment.where(post_id: post.id)
     .post
       = link_to("/posts/#{post.id}",class: "border-none post-menu-color", remote: true) do
-        .title-contents
-          h3= post.title
-          - if !post.image?
-           div.hatena-image !?
-          - else
-           = image_tag(post.image.url, class: "post_image_size")
-        .clear-left.clear-right
-        .post-menu
-          p.good-count
-           i.fa.fa-thumbs-up
-           = good.count
-          p.post-time= simple_time(post.created_at)
-          p.comment-count
-           i.fa.fa-comment
-           = comment.count
-        .clear-left
+       .title-contents
+        h3= post.title
+        - if !post.image?
+          div.hatena-image !?
+        - else
+          = image_tag(post.image.url, class: "post_image_size")
+       .clear-left.clear-right
+      .post-menu
+        p.good-count
+          i.fa.fa-thumbs-up
+          = good.count
+        p.post-time= simple_time(post.created_at)
+        p.comment-count
+          i.fa.fa-comment
+          = comment.count
+        - if @current_user.id == post.user_id
+         p.post-edit = link_to "編集", "/posts/#{post.id}/edit", remote: true
+      .clear-left

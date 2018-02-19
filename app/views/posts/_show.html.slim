@@ -11,19 +11,19 @@ body
           = image_tag("detector_logo.png", class: "logo-image")
   - if @current_user
   .show-page
+    - @good_user = Good.find_by(user_id: @current_user.id, post_id: @post.id)
+    - @good_count = Good.where(post_id: @post.id).count
     .post-show
       p.post-time= simple_time(@post.created_at)
       .clear-right
       h2.post-show-title= @post.title
       p.post-show-contents= text_url_to_link(h(raw(@post.contents.gsub(/\n/, '<br>')))).html_safe
-      .select-evaluation
-       - @good_user = Good.find_by(user_id: @current_user.id, post_id: @post.id)
-       - @good_count = Good.where(post_id: @post.id).count
-       - @comment_count = Comment.where(post_id: @post.id).count
-       = link_to("/comments/#{@post.id}/index", class: "btn-green", remote: true ) do
-        p.comment-btn
-         i.fa.fa-comment-o
-         = @comment_count
-       #good
-         = render partial: "goods/good"
-  #comments
+    #good
+      = render partial: "goods/good"
+    .comment-page
+     #comments-list
+      = render(partial: "comments/comments")
+     = form_tag("/comments/#{@post.id}/create", remote: true) do
+      .comment-form
+       textarea.comment-text name="contents" placeholder="Comment"
+       input.comment-input-btn type="submit"

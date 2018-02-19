@@ -1,13 +1,15 @@
 doctype html
 html
   head
-    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
-    title Yapy
-    meta name="viewport" content="width=device-width,initial-scale=1"
-    = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
+   meta charset="UTF-8"
+   meta content="アイディアのSNS" name="Yapy" /
+   meta name="viewport" content="width=device-width,initial-scale=1"
+   title Yapy
+
+   = csrf_meta_tags
+   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+   = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
   body
     header
       .header-logo

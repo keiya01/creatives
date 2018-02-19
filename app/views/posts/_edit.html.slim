@@ -1,0 +1,24 @@
+header
+ .header-logo
+  - if @current_user
+   p.back-btn
+    i.fa.fa-arrow-left
+   = link_to("/posts/index",class: "border-none") do
+    = image_tag("detector_logo.png", class: "logo-image")
+  - else
+   = link_to("/",class: "border-none btn-black") do
+    = image_tag("detector_logo.png", class: "logo-image")
+.post-form
+ h3 Edit Idea
+ .form
+  - @post.errors.full_messages.each do |message|
+   .error-message
+    p style="color:red" = message
+  = form_tag("/posts/#{@post.id}/update", class: "form-tag", multipart: true) do
+   input.post-input type="text" name="title" placeholder="アイディアを入力してください。" value="#{@post.title}"
+   textarea.post-input.post-text type="text" name="contents" placeholder="概要"
+    =@post.contents
+   input.post-file type="file" name="image" value="#{@post.image_url}"
+   input.input-btn type="submit" value="投稿"
+#load
+ p = image_tag("2.gif")

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :brock_not_current_user, {only:[:new,:create]}
-  before_action :post_find, {only:[:show]}
+  before_action :post_find, {only:[:show,:edit,:update]}
   before_action :post_time, {only:[:new, :create]}
 
 
@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = Comment.where(post_id: @post.id).order(created_at: 'ASC')
     render(layout: "posts_head")
     respond_to do |format|
         format.html
@@ -42,10 +43,28 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    render(layout: "posts_head")
+    respond_to do |format|
+        format.html
+        format.js
+      end
+  end
+
+  def update
+    @post.title = params[:title]
+    @post.contents = params[:contents]
+    if @post.save
+      redirect_to '/posts/index', notice: "編集しました。"
+    else
+      render partial: 'posts/edit'
+    end
+  end
+
   private
 
   def post_find
-  	@post = Post.find_by(id: params[:id])
+  	@post = Post.find(params[:id])
   end
 
   def post_time
