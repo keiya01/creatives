@@ -112,6 +112,10 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.6.0)
+      launchy (~> 2.2)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -162,6 +166,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.1.0)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
     railties (5.1.4)
       actionpack (= 5.1.4)
       activesupport (= 5.1.4)
@@ -177,7 +184,6 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rinku (2.0.4)
     rubyzip (1.2.1)
     sass (3.5.5)
       sass-listen (~> 4.0.0)
@@ -255,12 +261,13 @@ DEPENDENCIES
   jquery-rails (~> 4.3, >= 4.3.1)
   jquery-turbolinks
   kaminari (~> 0.17.0)
+  letter_opener
   omniauth
   omniauth-twitter
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)
-  rinku
+  rails-i18n
   sass-rails (~> 5.0)
   selenium-webdriver
   slim-rails (= 3.1.3)

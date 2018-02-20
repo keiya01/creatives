@@ -35,9 +35,14 @@ class UsersController < ApplicationController
 
   def update
     if @user
+      @user.email = params[:email]
       @user.username = params[:name]
       @user.image_url = params[:image]
-      redirect_to("/users/#{@user.id}", notice: "編集しました。") if @user.save
+      if @user.save
+        redirect_to("/users/#{@user.id}", notice: "編集しました。")
+      else
+        render "users/edit"
+      end
     end
   end
 

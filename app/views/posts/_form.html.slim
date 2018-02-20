@@ -10,7 +10,37 @@
     p style="color:red" = message
   = form_tag("/posts/create", class: "form-tag", multipart: true) do
    input.post-input type="text" name="title" placeholder="アイディアを入力してください。" value="#{@post.title}"
-   textarea.post-input.post-text type="text" name="contents" placeholder="概要"　=@post.contents
+   textarea.post-input.post-text type="text" name="contents" placeholder="概要"
+    - if @post.contents != nil
+     = @post.contents
+    - else
+     | 【実行したいこと】
+
+
+
+
+
+
+       【なぜやりたいのか・なぜ必要なのか】
+
+
+
+
+
+
+       【方法・課題】
+
+
+
+
+
+
+       【解決策】
+
+        　
+
+
+        　
    input.post-file type="file" name="image"
    input.input-btn type="submit" value="投稿"
 #load

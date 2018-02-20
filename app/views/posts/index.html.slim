@@ -1,7 +1,13 @@
 .post-page
   .page
-    .posts-list
-      = render partial: 'index'
-    = paginate @posts
+   .posts-list
+    - if @current_user.email.blank?
+     = link_to "/users/#{@current_user.id}/edit" do
+      p.email-notification
+       | メールアドレスを追加してください！
+       br
+       | 登録することで通知を受け取れます！
+    = render partial: 'index'
+   = paginate @posts
 #new-form
 #post-show
