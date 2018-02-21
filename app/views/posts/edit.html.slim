@@ -1,13 +1,3 @@
-header
- .header-logo
-  - if @current_user
-   p.back-btn
-    i.fa.fa-arrow-left
-   = link_to("/posts/index",class: "border-none") do
-    = image_tag("detector_logo.png", class: "logo-image")
-  - else
-   = link_to("/",class: "border-none btn-black") do
-    = image_tag("detector_logo.png", class: "logo-image")
 .post-form
  h3 Edit Idea
  .form

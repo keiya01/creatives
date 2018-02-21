@@ -1,14 +1,3 @@
-body
-  header
-    .header-logo
-      - if @current_user
-        p.back-btn
-          i.fa.fa-arrow-left
-        = link_to("/posts/index",class: "border-none") do
-          = image_tag("detector_logo.png", class: "logo-image")
-      - else
-        = link_to("/",class: "border-none btn-black") do
-          = image_tag("detector_logo.png", class: "logo-image")
   .show-page
     - @good_user = Good.find_by(user_id: @current_user.id, post_id: @post.id) if @current_user
     - @good_count = Good.where(post_id: @post.id).count
@@ -33,3 +22,4 @@ body
       .comment-form
        textarea.comment-text name="contents" placeholder="Comment"
        input.comment-input-btn type="submit"
+      .clear-left

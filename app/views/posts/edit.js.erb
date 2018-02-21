@@ -1,17 +1,3 @@
-$("#new-form").html("<%= j(render 'edit') %>");
-$("#new-form").show();
-var current_scrollY = $( window ).scrollTop();
-$('.post-page').css({
-    position: 'fixed',
-    width: '100%',
-    top: -1 * current_scrollY
-  });
-$('.back-btn').on('click', function(e){
-    $('.post-page').attr( {style: ''} );
-    $('html, body').prop({scrollTop: current_scrollY});
-    $('#new-form').hide();
-});
-
 $('.form-tag').on('submit', function () {
         $(this).find('input:submit').prop('disabled', true);
         $("#load").show();

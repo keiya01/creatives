@@ -10,11 +10,6 @@ class PostsController < ApplicationController
 
   def show
     @comments = Comment.where(post_id: @post.id).order(created_at: 'ASC')
-    render(layout: "posts_head")
-    respond_to do |format|
-        format.html
-        format.js
-      end
   end
 
   def rank
@@ -23,11 +18,6 @@ class PostsController < ApplicationController
 
   def new
   	@post = Post.new
-    render(layout: "posts_head")
-    respond_to do |format|
-        format.html
-        format.js
-      end
   end
 
   def create
@@ -44,11 +34,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    render(layout: "posts_head")
-    respond_to do |format|
-        format.html
-        format.js
-      end
   end
 
   def update
@@ -57,7 +42,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to '/posts/index', notice: "編集しました。"
     else
-      render partial: 'posts/edit'
+      render 'posts/edit'
     end
   end
 

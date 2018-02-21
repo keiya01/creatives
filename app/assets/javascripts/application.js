@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function() {
 			$(flash).slideDown(500);
 			setTimeout(function(){
 				$(flash).slideUp(500);
-			},3000);
+			},2000);
 		};
 	};
 	headerFlash("#flash");
@@ -64,7 +64,7 @@ $(document).on('turbolinks:load', function() {
 			headLogo.addClass('fa-angle-down');
 			$('.point').stop(false, true).fadeIn(300);
 			$('#header-menu').stop(false, true).slideUp(300);
-		}
+		};
 	});
 
 	// user show menu

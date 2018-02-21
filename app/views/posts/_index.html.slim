@@ -3,7 +3,7 @@
     - good = Good.where(post_id: post.id)
     -comment = Comment.where(post_id: post.id)
     .post
-      = link_to("/posts/#{post.id}",class: "border-none post-menu-color", remote: true) do
+      = link_to("/posts/#{post.id}",class: "border-none post-menu-color") do
        .title-contents
         h3= post.title
         - if !post.image?
@@ -20,5 +20,5 @@
           i.fa.fa-comment
           = comment.count
         - if @current_user.id == post.user_id
-         p.post-edit = link_to "編集", "/posts/#{post.id}/edit", remote: true
+         p.post-edit = link_to "編集", "/posts/#{post.id}/edit"
       .clear-left
