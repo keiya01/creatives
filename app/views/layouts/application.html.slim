@@ -1,6 +1,13 @@
 doctype html
 html
   head
+    script async src="https://www.googletagmanager.com/gtag/js?id=UA-112402320-2"
+    javascript:
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-112402320-2');
     meta charset="UTF-8"
     meta content="アイディアのSNS" name="Yapy" /
     meta name="viewport" content="width=device-width,initial-scale=1"
@@ -10,14 +17,6 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
-    script async src="https://www.googletagmanager.com/gtag/js?id=UA-112402320-2"
-    javascript:
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-112402320-2');
-
   body
     header
       .header-logo
