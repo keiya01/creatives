@@ -1,8 +1,8 @@
 - @good_count = Good.where(post_id: @post.id).count
-- if Post.find_by(id: @post.id, user_id: @current_user.id)
+- if @current_user && Post.find_by(id: @post.id, user_id: @current_user.id)
   p.good-btn
     i.fa.fa-thumbs-o-up
-- elsif Good.find_by(user_id: @current_user.id, post_id: @post.id)
+- elsif @current_user && Good.find_by(user_id: @current_user.id, post_id: @post.id)
   p.good-btn.pushed-good-btn
    i.fa.fa-thumbs-up
 - else

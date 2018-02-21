@@ -16,7 +16,7 @@
         p.comment-contents= text_url_to_link(h(raw(comment.contents.gsub(/\n/, '<br>')))).html_safe
        .comment-menu
         p.comment-time= simple_time(comment.created_at)
-        - if @current_user.id == comment.user_id
+        - if @current_user && @current_user.id == comment.user_id
          p.comment-destroy = link_to "削除", "/comments/#{comment.id}/destroy", method: 'post', remote: true,data: {confirm: "削除してもよろしいですか？", cancel: "やめる", commit: "削除する"}, title: "確認メッセージ"
         .clear-left
 - else

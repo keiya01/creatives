@@ -229,6 +229,7 @@
 	width: 100%;
 	border-top: 1px solid #ccc;
 	padding-top: 10px;
+	padding-bottom: 30px;
 	background-color: #eee;
 }
 .comment-form{
@@ -258,6 +259,17 @@
 	background-color: #fff;
 	margin-top: 30px;
 	-webkit-overflow-scrolling: touch;
+}
+.no-current-user-comment{
+	text-align: center;
+	width: 90%;
+	max-width: 480px;
+	margin: 0 auto;
+	padding: 20px 10px;
+	background-color: white;
+}
+.no-current-user-comment h3{
+	font-size: 15px;
 }
 // rank
 .rank-page{

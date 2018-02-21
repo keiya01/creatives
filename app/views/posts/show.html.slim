@@ -18,8 +18,14 @@
     .comment-page
      #comments-list
       = render(partial: "comments/comments")
-     = form_tag("/comments/#{@post.id}/create", remote: true) do
-      .comment-form
-       textarea.comment-text name="contents" placeholder="Comment"
-       input.comment-input-btn type="submit"
-      .clear-left
+     - if @current_user
+      = form_tag("/comments/#{@post.id}/create", remote: true) do
+       .comment-form
+        textarea.comment-text name="contents" placeholder="Comment"
+        input.comment-input-btn type="submit"
+       .clear-left
+     - else
+       .no-current-user-comment
+        h3
+          = link_to 'Twitterで会員登録', '/auth/twitter'
+          | をして、コメントを追加しましょう！！

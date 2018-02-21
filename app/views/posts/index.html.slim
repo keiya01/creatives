@@ -2,7 +2,7 @@
  .post-page
   .post-index
    .posts-list
-    - if @current_user.email.blank?
+    - if @current_user && @current_user.email.blank?
      = link_to "/users/#{@current_user.id}/edit" do
       p.email-notification
        | メールアドレスを追加してください！

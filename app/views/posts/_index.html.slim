@@ -19,6 +19,6 @@
         p.comment-count
           i.fa.fa-comment
           = comment.count
-        - if @current_user.id == post.user_id
+        - if @current_user && @current_user.id == post.user_id
          p.post-edit = link_to "編集", "/posts/#{post.id}/edit"
       .clear-left
