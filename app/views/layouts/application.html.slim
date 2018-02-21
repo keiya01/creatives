@@ -1,13 +1,6 @@
 doctype html
 html
   head
-    script async src="https://www.googletagmanager.com/gtag/js?id=UA-112402320-2"
-    javascript:
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-114532536-1');
     meta charset="UTF-8"
     meta content="アイディアのSNS" name="Yapy" /
     meta name="viewport" content="width=device-width,initial-scale=1"
@@ -17,6 +10,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
+    = analytics_init if Rails.env.production?
     meta name="google-site-verification" content="EmOQw9GPzAyRfJumoUmV1D1GS6RON2P8OztnFx5iGAA"
   body
     header

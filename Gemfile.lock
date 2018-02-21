@@ -90,6 +90,7 @@ GEM
       railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    google-analytics-rails (1.1.1)
     hashie (3.5.7)
     hirb (0.7.3)
     hirb-unicode (0.0.5)
@@ -112,10 +113,6 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    launchy (2.4.3)
-      addressable (~> 2.3)
-    letter_opener (1.6.0)
-      launchy (~> 2.2)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -255,13 +252,13 @@ DEPENDENCIES
   data-confirm-modal
   dotenv-rails
   font-awesome-rails
+  google-analytics-rails
   hirb
   hirb-unicode
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)
   jquery-turbolinks
   kaminari (~> 0.17.0)
-  letter_opener
   omniauth
   omniauth-twitter
   pg (~> 0.18)

@@ -58,6 +58,7 @@ group :development do
   gem 'sqlite3'
 end
 group :production do
+  gem 'google-analytics-rails'
   gem 'pg', '~> 0.18'
   gem 'cloudinary'
 end
