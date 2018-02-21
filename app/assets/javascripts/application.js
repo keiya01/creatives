@@ -71,12 +71,12 @@ $(document).on('turbolinks:load', function() {
 	$('.list-menu').click(function(){
 		if($(this).hasClass('active')){
 			$('.list-menu').css("background-color","#fff");
-			$(this).css("background-color","#eee");
+			$(this).css("background-color","#bbb");
 			$('#show-user-posts').show();
 			$('#show-user-goods').hide();
 		}else{
 			$('.list-menu').css("background-color","#fff");
-			$(this).css("background-color","#eee");
+			$(this).css("background-color","#bbb");
 			$('#show-user-goods').show();
 			$('#show-user-posts').hide();
 		}

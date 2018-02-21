@@ -38,6 +38,9 @@
 .user-show-page{
 	height: 100%;
 	width: 100%;
+	max-width: 480px;
+	margin: 0 auto;
+	background-color: #fff;
 	text-align: center;
 }
 .user-image-common{
@@ -109,6 +112,7 @@
 	border-radius: 10px;
 	box-shadow: 3px 1px 10px #ccc;
 	padding: 5px;
+	background-color: #fff;
 }
 .user-post-title{
 	color: #111;
@@ -160,6 +164,7 @@
 }
 .edit-contents{
 	width: 95%;
+	max-width: 480px;
 	margin: 0 auto;
 	background-color: #fff;
 	border-radius: 20px;
