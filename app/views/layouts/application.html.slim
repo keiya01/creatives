@@ -4,11 +4,13 @@ html
     meta charset="UTF-8"
     meta content="アイディアのSNS" name="Yapy" /
     meta name="viewport" content="width=device-width,initial-scale=1"
-    meta name="twitter:card" content="summary"
-    meta name="twitter:site" content="@keya_00001"
-    meta name="twitter:title" content="Yapy"
-    meta name="twitter:description" content="アイディアを評価してもらい,形にしよう！"
-    meta name="twitter:image" content="#{asset_url('detector_logo.png')}"
+    - twitter_card = get_twitter_card_info(@post ? @post : nil)
+     meta name="twitter:card" content="#{twitter_card[:card]}"
+     meta name="twitter:site" content="#{twitter_card[:site]}"
+     meta property="og:url" content="#{twitter_card[:url]}"
+     meta property="og:title" content="#{twitter_card[:title]}"
+     meta property="og:description" content="#{twitter_card[:description]}"
+     meta name="twitter:image" content="#{twitter_card[:image]}"
     title Yapy
 
     = csrf_meta_tags
