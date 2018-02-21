@@ -8,10 +8,10 @@ html
     - twitter_card = get_twitter_card_info(twitter_post ? twitter_post : nil)
      meta name="twitter:card" content="#{twitter_card[:card]}"
      meta name="twitter:site" content="#{twitter_card[:site]}"
-     meta property="og:url" content="#{twitter_card[:url]}"
-     meta property="og:title" content="#{twitter_card[:title]}"
-     meta property="og:description" content="#{twitter_card[:description]}"
-     meta property="og:image" content="#{twitter_card[:image]}"
+     meta name="twitter:url" content="#{twitter_card[:url]}"
+     meta name="twitter:title" content="#{twitter_card[:title]}"
+     meta name="twitter:description" content="#{twitter_card[:description]}"
+     meta name="twitter:image" content="#{twitter_card[:image]}"
     title Yapy
 
     = csrf_meta_tags
