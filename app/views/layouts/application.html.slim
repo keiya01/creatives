@@ -6,12 +6,12 @@ html
     meta name="viewport" content="width=device-width,initial-scale=1"
     - twitter_post = Post.find_by(id: params[:id])
     - twitter_card = get_twitter_card_info(twitter_post ? twitter_post : nil)
-     meta name="twitter:card" content="#{twitter_card[:card]}"
-     meta name="twitter:site" content="#{twitter_card[:site]}"
-     meta name="twitter:url" content="#{twitter_card[:url]}"
-     meta name="twitter:title" content="#{twitter_card[:title]}"
-     meta name="twitter:description" content="#{twitter_card[:description]}"
-     meta name="twitter:image" content="#{twitter_card[:image]}"
+    meta name="twitter:card" content="#{twitter_card[:card]}"
+    meta name="twitter:site" content="#{twitter_card[:site]}"
+    meta name="twitter:url" content="#{twitter_card[:url]}"
+    meta name="twitter:title" content="#{twitter_card[:title]}"
+    meta name="twitter:description" content="#{twitter_card[:description]}"
+    meta name="twitter:image" content="#{twitter_card[:image]}"
     title Yapy
 
     = csrf_meta_tags
