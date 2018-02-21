@@ -1,5 +1,5 @@
 .post-page
-  .page
+  .post-index
    .posts-list
     - if @current_user.email.blank?
      = link_to "/users/#{@current_user.id}/edit" do

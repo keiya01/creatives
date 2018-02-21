@@ -43,9 +43,20 @@
     | ・このサービスへの不満や提案などがございましたら、
     = link_to "手紙", "/contacts/new"
     | をいただければサービス向上のための意見として役立たせていただきます！
+  .how-to-use
+   h5 今後追加予定の機能
+   p
+    | ・メールによる通知機能
+    br
+    | ・ダイレクトメッセージ機能
+    br
+    | ・その他随時追加予定
  - if session[:new_user]
   = link_to "/how_to_use", method: 'post' do
    p.how-to-btn OK!!
- - else
+ - elsif @current_user
+  = link_to "/posts/index" do
+   p.how-to-btn 投稿一覧へ
+ -else
   = link_to "/" do
    p.how-to-btn トップへ

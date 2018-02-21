@@ -1,6 +1,23 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post-page{
+	background-color: #eee;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.post-index{
+	width: 100%;
+	max-width: 480px;
+	margin: 0 auto;
+	background-color: white;
+}
+
 .email-notification{
 	display: none;
 	width: 100%;
@@ -142,13 +159,34 @@
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	background-color: #fff;
+	background-color: #eee;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
 .post-show{
 	padding-top: 100px;
 	width: 100%;
+	max-width: 480px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.show-good-count{
+	float: right;
+	padding-right: 15px;
+	color: #00CC00;
+	font-size: 17px;
+}
+.show-good-count i{
+	padding-right: 2px;
+}
+.show-comment-count{
+	float: right;
+	padding-right: 10px;
+	color: #00CC00;
+	font-size: 17px;
+}
+.show-good-count i{
+	padding-right: 3px;
 }
 .post-show-title{
 	width: 95%;
@@ -190,9 +228,11 @@
 .comment-page{
 	width: 100%;
 	border-top: 1px solid #ccc;
+	padding-top: 10px;
 }
 .comment-form{
 	width: 90%;
+	max-width: 480px;
 	margin: 0 auto;
 }
 .comment-input-btn{
@@ -227,11 +267,12 @@
 }
 .rank-contents{
 	width: 95%;
+	max-width: 480px;
 	height: 100%;
 	padding: 20px 0;
 	border-radius: 10px;
 	margin: 0 auto;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 	background-color: #fff;
 }
 .rank-content{
@@ -324,17 +365,14 @@
 	font-weight: bold;
 	color: #999;
 }
-@media screen and (min-width: 480px){
+@media screen and (min-width: 960px){
 	.good-btn{
-		margin-left: 70px;
-	}
-	.comment-btn{
-		margin-right: 70px;
-	}
+		top: 150px;
+		left: 150px;
+ 	}
 }
-@media screen and (min: 960px){
-	
-}
-@media screen and (min: 1281px){
-
+@media screen and (min-width: 1281px){
+	.good-btn{
+		left: 300px;
+ 	}
 }

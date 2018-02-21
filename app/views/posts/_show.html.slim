@@ -13,8 +13,15 @@ body
   .show-page
     - @good_user = Good.find_by(user_id: @current_user.id, post_id: @post.id)
     - @good_count = Good.where(post_id: @post.id).count
+    - @comment_count = Comment.where(post_id: @post.id).count
     .post-show
       p.post-time= simple_time(@post.created_at)
+      p.show-good-count
+       i.fa.fa-thumbs-up
+       = @good_count
+      p.show-comment-count
+       i.fa.fa-comment
+       = @comment_count
       .clear-right
       h2.post-show-title= @post.title
       p.post-show-contents= text_url_to_link(h(raw(@post.contents.gsub(/\n/, '<br>')))).html_safe

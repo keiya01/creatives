@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'turbolinks:load', ->
-  $(".page .posts-list").infinitescroll
+  $(".post-index .posts-list").infinitescroll
     loading: {
       img:     "/images/Preloader_2.gif"
       msgText: ""

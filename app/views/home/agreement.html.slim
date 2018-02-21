@@ -57,4 +57,7 @@
    a href="/" 問い合わせ
    | から必要事項を記入しご連絡くださいますようお願いいたします。
   p 最終更新日 ： 2018年2月16日
-p.back-top = link_to 'TOPへ戻る', '/', class: "border-none back-top-btn"
+- if @current_user
+ p.back-top = link_to '投稿一覧へ', '/posts/index', class: "border-none back-top-btn"
+- else
+ p.back-top = link_to 'TOPへ', '/', class: "border-none back-top-btn"

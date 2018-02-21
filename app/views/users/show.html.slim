@@ -1,5 +1,4 @@
-.post-page
- .user-show-page
+.user-show-page
   - if @user.image_url?
    =image_tag @user.image_url.url, class: "user-image user-image-common"
   - else
