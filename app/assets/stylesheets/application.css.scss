@@ -20,6 +20,7 @@
  @import "bootstrap";
 *{
 	box-sizing: border-box;
+	-webkit-overflow-scrolling: touch;
 }
 a:hover{
 	text-decoration: none;
@@ -29,6 +30,7 @@ font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", Y
 }
 html,body{
 	margin: 0;
+	background-color: #eee;
 }
 h1,h2,h3,h4,h5,h6,p{
 	margin: 0;
@@ -122,6 +124,10 @@ textarea{
 	width: 95%;
 	max-width: 480px;
 	margin: 0 auto;
+	background-color: #fff;
+	padding: 0 20px;
+	padding-bottom: 20px;
+	border-radius: 10px;
 }
 .input-btn{
 	display: inline-block;
