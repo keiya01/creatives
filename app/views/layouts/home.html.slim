@@ -10,6 +10,15 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    script async src="https://www.googletagmanager.com/gtag/js?id=UA-112402320-2"
+    script
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-112402320-2');
   body
    - if flash[:notice]
     #flash-home
