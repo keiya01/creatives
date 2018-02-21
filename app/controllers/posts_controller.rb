@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   		flash[:notice] = "Success!!"
   		redirect_to("/posts/index")
     else
-      render "posts/new", layout:"posts_head"
+      render "posts/new"
     end
   end
 
