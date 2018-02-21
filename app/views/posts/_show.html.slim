@@ -9,9 +9,8 @@ body
       - else
         = link_to("/",class: "border-none btn-black") do
           = image_tag("detector_logo.png", class: "logo-image")
-  - if @current_user
   .show-page
-    - @good_user = Good.find_by(user_id: @current_user.id, post_id: @post.id)
+    - @good_user = Good.find_by(user_id: @current_user.id, post_id: @post.id) if @current_user
     - @good_count = Good.where(post_id: @post.id).count
     - @comment_count = Comment.where(post_id: @post.id).count
     .post-show
