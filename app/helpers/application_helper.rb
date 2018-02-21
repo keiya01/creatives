@@ -22,12 +22,12 @@ module ApplicationHelper
         twitter_card[:url] = "https://www.yapy.fun/posts/#{page.id}"
         twitter_card[:title] = 'Yapy「面白いアイディア発見」'
         twitter_card[:description] = "タイトル：#{page.title}"
-        twitter_card[:image] = "#{assets_url("yapy_logo.jpg")}"
+        twitter_card[:image] = "#{asset_url("yapy_logo.jpg")}"
       else
         twitter_card[:url] = 'https://www.yapy.fun'
         twitter_card[:title] = 'アイデア実現のためのSNS「Yapy」'
         twitter_card[:description] = 'あなたのアイディアをあえて公開してみましょう！'
-        twitter_card[:image] = "#{assets_url("yapy_logo.jpg")}"
+        twitter_card[:image] = "#{asset_url("yapy_logo.jpg")}"
       end
       twitter_card[:card] = 'summary'
       twitter_card[:site] = '@Yapy_service'
