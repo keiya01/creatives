@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   	@comments = Comment.where(post_id: params[:post_id]).order(created_at: 'ASC')
     respond_to do |format|
   	 if @comment.save
-        NoticeMailer.comment_notice(@user, @post).deliver if @user.id != @current_user.id
+        NoticeMailer.comment_notice(@user, @post).deliver_now if @user.id != @current_user.id
   			format.html
   			format.js
   	 else

@@ -36,6 +36,7 @@ html
           = link_to("/",class: "border-none btn-black") do
             = image_tag("detector_logo.png", class: "logo-image")
     #header-menu
+      h3.menu-title My Menu
       - if @current_user
        p = link_to("マイページ","/users/#{@current_user.id}",class: "link")
       p = link_to("人気","/rank",class: "link")
