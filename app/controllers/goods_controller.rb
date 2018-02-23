@@ -18,8 +18,14 @@ class GoodsController < ApplicationController
       @remove_point.total -= 1
       if @remove_point.save
         @add_point.total += 1
-        @add_point.save
-        format.js
+        if @add_point.save
+          NoticeMailer.good_notice(@user, @post).deliver
+          format.html{ redirect_to '/posts/index'}
+          format.js
+        else
+          flash[:notice] = "エラーが発生しました。"
+          format.html{redirect_to "/posts/index"}
+        end
       else
         flash[:notice] = "エラーが発生しました。"
         format.html{redirect_to "/posts/index"}

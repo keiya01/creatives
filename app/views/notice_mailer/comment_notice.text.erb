@@ -1,0 +1,14 @@
+<%= @user.username %> さん
+
+
+<%= @post.title %>にコメントが追加されました！
+
+
+確認してみましょう！
+
+
+以下のURLから「Yapy」へ進めます！
+<%= url_for(host: 'www.yapy.fun', controller: :posts, action: :show, id: @post.id ) %>
+
+
+引き続き「Yapy」をよろしくお願いいたします。

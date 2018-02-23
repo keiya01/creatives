@@ -1,0 +1,19 @@
+h3
+ = @user.username
+ | さん
+hr
+br
+br
+p
+ = @post.title
+ | にコメントが追加されました！
+br
+br
+p 確認してみましょう！
+br
+br
+p 以下のURLから「Yapy」へ進めます！
+= url_for(host: 'www.yapy.fun', controller: :posts, action: :show, id: @post.id )
+br
+br
+p 引き続き「Yapy」をよろしくお願いいたします。

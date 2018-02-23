@@ -1,0 +1,22 @@
+h3
+ = @user.username
+ | さん
+hr
+br
+br
+p ユーザー情報が変更されました！
+p ご確認ください。
+br
+p
+ | ユーザーネーム：
+ = @user.username
+p
+ | メールアドレス：
+ = @user.email
+br
+br
+p 以下のURLからサービスへお戻りください。
+= url_for(host: 'www.yapy.fun', controller: :posts, action: :index )
+br
+br
+p 引き続き「Yapy」をよろしくお願いいたします。

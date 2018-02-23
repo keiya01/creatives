@@ -1,0 +1,14 @@
+<%= @user.username %> さん
+
+ユーザー情報が変更されました！
+ご確認ください。
+
+ユーザーネーム： <%= @user.username %>
+メールアドレス：　<%= @user.email %>
+
+
+以下のURLからサービスへお戻りください。
+<%= url_for(host: 'www.yapy.fun', controller: :posts, action: :index ) %>
+
+
+引き続き「Yapy」をよろしくお願いいたします。

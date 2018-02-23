@@ -31,6 +31,17 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: 'gmail.com',
+    user_name: ENV["GOOGLE_EMAIL_AUTH"],
+    password: ENV["GOOGLE_PASSWORD_AUTH"]
+    }
+
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -41,7 +52,6 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 

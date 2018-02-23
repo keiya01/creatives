@@ -5,7 +5,7 @@
    .error-message
     p style="color:red" = message
   = form_tag("/users/#{@user.id}/update", multipart: true) do
-   input.edit-name type="text" name="email" placeholder="Email" value="#{@user.email}" style="display: none"
+   input.edit-name type="text" name="email" placeholder="Email" value="#{@user.email}"
    input.edit-name type="text" name="name" placeholder="Name" value="#{@user.username}"
    input.edit-image type="file" name="image"
    input.input-btn type="submit" value="編集"
