@@ -163,6 +163,14 @@
 	color: #00CC00;
 	font-size: 17px;
 }
+.post-show-edit{
+	float: left;
+	color: #00bb00;
+	margin-left: 20px;
+	padding: 3px 6px;
+	font-size: 13px;
+	border: 1px solid #00bb00;
+}
 .show-good-count i{
 	padding-right: 3px;
 }
@@ -205,10 +213,12 @@
 }
 .comment-page{
 	width: 100%;
+	max-width: 480px;
+	margin: 0 auto;
 	border-top: 1px solid #ccc;
 	padding-top: 10px;
 	padding-bottom: 30px;
-	background-color: #eee;
+	background-color: #fff;
 }
 .comment-form{
 	width: 90%;
@@ -356,10 +366,28 @@
 	color: #999;
 }
 @media screen and (min-width: 960px){
+	.post:hover{
+		background-color: #f8f8ff;
+	}
 	.good-btn{
 		top: 150px;
 		left: 150px;
  	}
+ 	.post-form{
+		padding-bottom: 100px;
+	}
+	.post-form h3{
+		font-size: 30px;
+	}
+	.edit-form-title{
+		padding-bottom: 50px;
+	}
+	.post-text{
+		height: 600px;
+	}
+	.post-show-edit:hover{
+		background-color: #e6ffe9;
+	}
 }
 @media screen and (min-width: 1281px){
 	.good-btn{

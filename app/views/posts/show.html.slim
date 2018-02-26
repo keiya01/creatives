@@ -10,6 +10,9 @@
       p.show-comment-count
        i.fa.fa-comment
        = @comment_count
+      - if @current_user && @current_user.id == @post.user_id
+       = link_to "/posts/#{@post.id}/edit" do
+        p.post-show-edit 編集する
       .clear-right
       h2.post-show-title= @post.title
       p.post-show-contents= text_url_to_link(h(raw(@post.contents.gsub(/\n/, '<br>')))).html_safe

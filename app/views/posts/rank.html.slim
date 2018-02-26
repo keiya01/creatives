@@ -28,5 +28,7 @@
 - else
  .no-rank-page
   h3 投稿が少ないため評価できません。
+  - @ranks.each do |rank|
+    h3 = rank.title
 #post-show
 #new-form
