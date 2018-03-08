@@ -280,24 +280,25 @@
 	height: 100%;
 	text-align: center;
 	padding-bottom: 10px;
+	background-color: #fff;
 }
 .rank-top-post{
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 23px;
 	padding-bottom: 10px;
-	color: black;
+	color: #888;
 }
 .rank-top-post i{
-	font-size: 20px;
+	font-size: 30px;
 	color: yellow;
 	padding: 0 5px 0 10px;
 }
 .rank-notop-post{
 	border-top: 1px solid #ccc;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 20px;
 	padding: 20px 0 10px 15px;
-	color: black;
+	color: #888;
 }
 .rank-title{
 	font-size: 18px;

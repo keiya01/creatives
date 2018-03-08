@@ -2,7 +2,7 @@
  .rank-page
   .rank-contents
    - @ranks.each.with_index(1) do |rank,i|
-    = link_to "/posts/#{rank.id}", class: "border-none", remote: true
+    = link_to "/posts/#{rank.id}", class: "border-none"
      - if i == 1
       p.rank-top-post
        i.fa.fa-star
@@ -28,7 +28,6 @@
 - else
  .no-rank-page
   h3 投稿が少ないため評価できません。
-  - @ranks.each do |rank|
-    h3 = rank.title
+  = @ranks.count
 #post-show
 #new-form
