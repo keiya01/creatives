@@ -80,5 +80,12 @@ $(document).on('turbolinks:load', function() {
 			$('#show-user-goods').show();
 			$('#show-user-posts').hide();
 		}
-	})
+	});
+
+	$('.good-btn').on('click', function(){
+		$(this).addClass("pushed-good-btn");
+    	$(this).children("i").removeClass("fa-thumbs-o-up").addClass("fa-thumbs-up");
+	});
+
+
 });
