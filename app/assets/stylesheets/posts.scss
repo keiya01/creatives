@@ -322,19 +322,14 @@
 	line-height: 130px;
 	font-weight: bold;
 	color: white;
-	width: 80%;
+	width: 70%;
 	height: 130px;
 	background-color: #009900;
 	margin-bottom: 10px;
 }
-.rank-user-name{
-	text-align: left;
-	margin-left: 20px;
-	font-size: 15px;
-	color: black;
-}
 .rank-menu{
-	float: left;
+	display: inline-block;
+	width: 100%;
 	margin-top: 10px;
 }
 .rank-item{
@@ -351,7 +346,6 @@
 }
 .rank-time{
 	margin-top: 2px;
-	margin-left: 70px;
 	float: right;
 	font-size: 13px;
 	color: #aaa;
@@ -388,6 +382,9 @@
 	}
 	.post-show-edit:hover{
 		background-color: #e6ffe9;
+	}
+	.rank-menu{
+		width: 80%;
 	}
 }
 @media screen and (min-width: 1281px){
