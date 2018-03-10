@@ -39,6 +39,7 @@ class PostsController < ApplicationController
   def update
     @post.title = params[:title]
     @post.contents = params[:contents]
+    @post.image = params[:image]
     if @post.save
       redirect_to '/posts/index', notice: "編集しました。"
     else
