@@ -44,7 +44,8 @@ html
        p = link_to("手紙", "/contacts/new", class: "link")
       p = link_to("使い方", "/how_to_use", class: "link")
       p = link_to("利用規約","/agreement",class: "link")
-      p = link_to("ログアウト", "/logout", method: 'post', class: "link")
+      - if @current_user
+        p = link_to("ログアウト", "/logout", method: 'post', class: "link")
     - if flash[:notice]
       #flash
         h3.flash-text= flash[:notice]
