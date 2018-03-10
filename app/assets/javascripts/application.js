@@ -22,7 +22,7 @@
 $(document).on('turbolinks:load', function() { 
 	// flash slide
 	function headerFlash(flash){
-	  	if($(flash).length){
+		if($(flash).length){
 			$(flash).slideDown(500);
 			setTimeout(function(){
 				$(flash).slideUp(500);
@@ -34,9 +34,9 @@ $(document).on('turbolinks:load', function() {
 
 	// form textarea
 	$('.form-tag').on('submit', function () {
-        $(this).find('input:submit').prop('disabled', true);
-        $("#load").show();
-    });
+		$(this).find('input:submit').prop('disabled', true);
+		$("#load").show();
+	});
 
 	// loading display
 	$('#top').css('display','none');
@@ -44,7 +44,7 @@ $(document).on('turbolinks:load', function() {
 	$(window).on('turbolinks:load',function () {
 		$('#home-load').delay(1000).fadeOut(1000);
 		$('#top').css('display', 'block');
-		});
+	});
 	$('.logout').on('click', function(){
 		$('#load').show();
 		setTimeout(function(){
@@ -84,7 +84,7 @@ $(document).on('turbolinks:load', function() {
 
 	$('.good-btn').on('click', function(){
 		$(this).addClass("pushed-good-btn");
-    	$(this).children("i").removeClass("fa-thumbs-o-up").addClass("fa-thumbs-up");
+		$(this).children("i").removeClass("fa-thumbs-o-up").addClass("fa-thumbs-up");
 	});
 
 
