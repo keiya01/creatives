@@ -39,7 +39,9 @@ class UsersController < ApplicationController
       @user.username = params[:name]
       @user.image_url = params[:image]
       if @user.save
-        NoticeMailer.greeting(@user).deliver_now
+        unless @user.email.blank?
+          NoticeMailer.greeting(@user).deliver_now
+        end
         redirect_to("/users/#{@user.id}", notice: "編集しました。")
       else
         render "users/edit"

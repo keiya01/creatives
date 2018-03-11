@@ -5,7 +5,7 @@
     - if @current_user && @current_user.email.blank?
      = link_to "/users/#{@current_user.id}/edit" do
       p.email-notification
-       | メールアドレスを追加してください！
+       | メールアドレスを登録してください！
        br
        | 登録することで通知を受け取れます！
     = render partial: 'index'
