@@ -16,7 +16,8 @@
       .clear-right
       h2.post-show-title= @post.title
       p.post-show-contents
-        = text_url_to_link(h(raw(@post.contents.gsub(/\n/, '<br>')))).html_safe
+        = html_escape(@post.contents).gsub(/\n/, '<br>').html_safe
+        /#= text_url_to_link(h(raw(@post.contents.gsub(/\n/, '<br>')))).html_safe
     #good
       = render partial: "goods/good"
     .comment-page

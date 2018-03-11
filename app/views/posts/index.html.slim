@@ -8,6 +8,12 @@
        | メールアドレスを登録してください！
        br
        | 登録することで通知を受け取れます！
+    - elsif !@current_user
+     = link_to "/auth/twitter" do
+      p.register-notification
+       | 会員登録をしてあなたのアイディアを発展させましょう！
+       br
+       | ここをタッチすることでTwitter登録画面へ進みます。
     = render partial: 'index'
    = paginate @posts
 #new-form
