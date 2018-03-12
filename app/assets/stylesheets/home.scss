@@ -96,12 +96,13 @@
 }
 .agreement{
 	width: 90%;
+	max-width: 600px;
 	height: 100%;
 	margin: 0 auto;
 	padding: 0 20px;
 	padding-bottom: 10px;
 	margin-bottom: 30px;
-	background-color: #eee;
+	background-color: #fff;
 }
 .agreement h3{
 	padding-top: 20px;
@@ -132,7 +133,7 @@
 	width: 90%;
 	height: 100%;
 	margin: 0 auto;
-}c
+}
 .how-to-use-page h3{
 	text-align: center;
 	font-size: 25px;
@@ -141,7 +142,9 @@
 	padding: 50px 0 30px 0;
 }
 .how-to-contents{
-
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
 }
 .how-to-use{
 	width: 100%;
@@ -149,7 +152,6 @@
 	padding: 10px;
 	border: 2px solid #ccc;
 	background-color: #fff;
-	text-align: left;
 	margin: 20px 0;
 }
 .how-to-use h5{
