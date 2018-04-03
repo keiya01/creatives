@@ -18,14 +18,14 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
     = analytics_init if Rails.env.production?
-    meta name="google-site-verification" content="EmOQw9GPzAyRfJumoUmV1D1GS6RON2P8OztnFx5iGAA"
+    meta name="google-site-verification" content='<%= ENV["GOOGLE_CONSOLE"] %>'
   body
     header
       .header-logo
         - if @current_user
           p#header-menu-down
            i.fa.fa-angle-down
-          = link_to("/posts/index",class: "border-none btn-black") do
+          = link_to("/",class: "border-none btn-black") do
             = image_tag("detector_logo.png", class: "logo-image")
           = link_to("/posts/new",class: "btn-green") do
            p.new-post
@@ -36,9 +36,12 @@ html
           = link_to("/",class: "border-none btn-black") do
             = image_tag("detector_logo.png", class: "logo-image")
     #header-menu
+      - uri = request.fullpath
       h3.menu-title My Menu
-      - if @current_user
+      - if @current_user && request.fullpath == '/'
        p = link_to("マイページ","/users/#{@current_user.id}",class: "link")
+      - elsif @current_user && uri.include?('/users/')
+       p = link_to("投稿一覧","/",class: "link")
       p = link_to("人気","/rank",class: "link")
       - if @current_user
        p = link_to("手紙", "/contacts/new", class: "link")
@@ -46,6 +49,8 @@ html
       p = link_to("利用規約","/agreement",class: "link")
       - if @current_user
         p = link_to("ログアウト", "/logout", method: 'post', class: "link")
+      - else
+        p = link_to("登録 or ログイン", "/top", class: "link")
     - if flash[:notice]
       #flash
         h3.flash-text= flash[:notice]

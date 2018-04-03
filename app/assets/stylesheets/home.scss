@@ -2,14 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .top{
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	height: 100%;
+	width: 100%;
 	text-align: center;
-	color: white;
-	background: linear-gradient(to left top,#00ff00 20%,#0000ff);
+	color: #009900;
+	// background: linear-gradient(to left top,#00ff00 20%,#0000ff);
+	background-color: #fff;
+	padding-bottom: 50px;
 }
 .top-menu{
 	float: right;
@@ -17,21 +16,53 @@
 	padding-right: 15px;
 	padding-top: 30px;
 }
-.top h1{
-	padding-top: 150px;
-	font-size: 65px;
+.top-left{
+	float: left;
+	width: 60%;
+	height: 130%;
+	margin-top: 150px;
+	margin-left: 40px;
+	display: inline-block;
+	box-shadow: 1px 2px 4px #ccc;
+}
+.top-left h1{
+	padding: 30px 0;
+	font-size: 60px;
 	font-family: Impact,Charcoal;
 }
+.top-right{
+	float: right;
+	width: 60%;
+	min-width: 200px;
+	height: 100%;
+	display: inline-block;
+	margin-top: 200px;
+	margin-right: 30px;
+}
 .top-text{
-	font-size: 17px;
-	padding-top: 20px;
+	display: inline-block;
+	text-align: center;
+	line-height: 80px;
+	font-size: 15px;
+	padding-top: 0px;
+	border-radius: 50%;
+	height: 80px;
+	width: 80px;
+	margin: 5%;
+	box-shadow: -1px -2px 8px #aaa;
+	background-color: #fff;
+}
+.top h5{
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 200px;
 }
 .top-agreement{
 	font-size: 13px;
-	color: #fff;
+	color: #009900;
 	width: 70%;
 	margin:0 auto;
-	padding-top: 60px;
+	padding-top: 200px;
 	text-align: left;
 }
 .top-agreement a{
@@ -49,7 +80,7 @@
 	border-radius: 5px;
 	font-size: 15px;
 	color: #fff;
-	margin-top: 10px;
+	margin-top: 30px;
 }
 .twitter i{
 	font-size: 20px;

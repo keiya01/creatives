@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'posts#index'
+
   get 'comments/:post_id/index' => 'comments#index'
   post 'comments/:post_id/create' => 'comments#create'
   post 'comments/:post_id/destroy' => 'comments#destroy'
@@ -11,7 +13,6 @@ Rails.application.routes.draw do
   post 'posts/create' => 'posts#create'
   get 'posts/:id/edit' => 'posts#edit'
   post 'posts/:id/update' => 'posts#update'
-  get 'posts/index' => "posts#index"
   get 'posts/:id' => 'posts#show'
 
   post 'logout' => 'users#logout'
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
   get 'how_to_use' => 'home#how_to_use'
   post 'how_to_use' => 'home#new_user'
   get 'agreement' => 'home#agreement'
-  root 'home#top'
+  get 'top' => 'home#top'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

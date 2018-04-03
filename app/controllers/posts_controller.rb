@@ -24,10 +24,10 @@ class PostsController < ApplicationController
   	@post = Post.new(title: params[:title], contents: params[:contents], user_id: @current_user.id, image: params[:image], image_cache: params[:image_cache])
   	if  !@post_time.blank?
   		flash[:notice] = "次の投稿は#{@next_post}から可能です。"
-  		redirect_to("/posts/index")
+  		redirect_to("/")
   	elsif @post.save
   		flash[:notice] = "Success!!"
-  		redirect_to("/posts/index")
+  		redirect_to("/")
     else
       render "posts/new"
     end
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     @post.contents = params[:contents]
     @post.image = params[:image]
     if @post.save
-      redirect_to '/posts/index', notice: "編集しました。"
+      redirect_to '/', notice: "編集しました。"
     else
       render 'posts/edit'
     end

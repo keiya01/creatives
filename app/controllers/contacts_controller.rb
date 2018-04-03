@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
   def create
   	@contact = Contact.new(contents: params[:contents], user_id: @current_user.id)
   	if @contact.save
-  		redirect_to "/posts/index", notice: "ありがとうございます!!"
+  		redirect_to "/", notice: "ありがとうございます!!"
   	else
   		render "contacts/new"
   	end

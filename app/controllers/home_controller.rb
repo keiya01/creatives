@@ -14,9 +14,9 @@ class HomeController < ApplicationController
   def new_user
   	if session[:new_user]
   	  session[:new_user] = nil
-  	  redirect_to '/posts/index', notice: "Thank You !!"
+  	  redirect_to '/', notice: "Thank You !!"
   	else
-  	  redirect_to '/posts/index'
+  	  redirect_to '/'
   	end
   end
 end

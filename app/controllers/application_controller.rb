@@ -9,14 +9,14 @@ class ApplicationController < ActionController::Base
   def brock_not_current_user
   	unless @current_user
   		flash[:notice] = "ログインまたは新規登録をしてください。"
-  		redirect_to("/")
+  		redirect_to("/top")
   	end
   end
 
   def brock_current_user
   	if @current_user
   		flash[:notice] = "すでにログインしています。"
-  		redirect_to("/posts/index")
+  		redirect_to("/")
   	end
   end
 

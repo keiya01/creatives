@@ -1,0 +1,2 @@
+class BadsController < ApplicationController
+end

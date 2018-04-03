@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     @comments = Comment.where(post_id: @comment.post_id).order(created_at: 'ASC')
     respond_to do |format|
      if @comment.destroy
-      format.html{redirect_to("/posts/index", notice: "削除しました。")}
+      format.html{redirect_to("/", notice: "削除しました。")}
       format.js
      end
     end

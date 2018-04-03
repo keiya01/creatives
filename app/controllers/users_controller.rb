@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       if session[:new_user]
        redirect_to '/how_to_use', notice: "ご登録ありがとうございます。"
       else
-       redirect_to '/posts/index', notice: "ログインしました。"
+       redirect_to '/', notice: "ログインしました。"
       end
     else
       redirect_to root_path, notice: "失敗しました。"
@@ -72,7 +72,7 @@ private
   def uncorrect_user_brock
     unless @current_user.id == @user.id
       flash[:notice] = "権限がありません。"
-      redirect_to("/posts/index")
+      redirect_to("/")
     end
   end
 

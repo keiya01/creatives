@@ -20,19 +20,19 @@ class GoodsController < ApplicationController
         @add_point.total += 1
         if @add_point.save
           NoticeMailer.good_notice(@user, @post).deliver_now
-          format.html{redirect_to "/posts/index"}
+          format.html{redirect_to "/"}
           format.js
         else
           flash[:notice] = "エラーが発生しました。"
-          format.html{redirect_to "/posts/index"}
+          format.html{redirect_to "/"}
         end
       else
         flash[:notice] = "エラーが発生しました。"
-        format.html{redirect_to "/posts/index"}
+        format.html{redirect_to "/"}
       end
      else
       flash[:notice] = "エラーが発生しました。"
-      format.html{redirect_to "/posts/index"}
+      format.html{redirect_to "/"}
      end
     end
   end
