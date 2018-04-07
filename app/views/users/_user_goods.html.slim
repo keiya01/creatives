@@ -1,5 +1,5 @@
 - @goods.each do |good|
- .user-post-style.user-good
+ .user-post.user-post-style
   = link_to "/posts/#{good.id}", class: "border-none" do
    p.user-post-title = good.title
    - if good.image?

@@ -19,7 +19,9 @@ class GoodsController < ApplicationController
       if @remove_point.save
         @add_point.total += 1
         if @add_point.save
-          NoticeMailer.good_notice(@user, @post).deliver_now
+          unless @user.email.blank?
+            NoticeMailer.good_notice(@user, @post).deliver_now
+          end
           format.html{redirect_to "/"}
           format.js
         else

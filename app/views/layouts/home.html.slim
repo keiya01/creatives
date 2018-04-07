@@ -18,7 +18,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'detector_favicon.ico', :rel => 'shortcut icon'
     = analytics_init if Rails.env.production?
-    meta name="google-site-verification" content='<%= ENV["GOOGLE_CONSOLE"] %>'
+    meta name="google-site-verification" content="<%= ENV['GOOGLE_CONSOLE'] %>"
   body
    - if flash[:notice]
     #flash-home

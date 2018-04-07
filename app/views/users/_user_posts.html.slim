@@ -1,6 +1,6 @@
 - @posts.each do |post|
- = link_to "/posts/#{post.id}", class: "border-none" do
-  .user-post.user-post-style
+ .user-post.user-post-style
+  = link_to "/posts/#{post.id}", class: "border-none" do
    p.user-post-title = post.title
    - if post.image?
     = image_tag post.image.url, class: "user-post-image"

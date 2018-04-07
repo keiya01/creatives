@@ -7,13 +7,13 @@
   P.edit-link = link_to "編集する", "/users/#{@user.id}/edit", class: "edit-link-color"
   .user-lists
    .list-titles
-    p.list-title.list-menu.show-active 投稿
-    = link_to "/users/#{@user.id}/good" do
-      p.list-menu.list-good Good
+    = link_to "/users/#{@user.id}" do
+      p.list-title.list-menu 投稿
     end
+    p.list-menu.list-good.show-active Good
    #show-user-posts
-    #user-post-lists
-     =render partial: 'user_posts'
-    = paginate @posts
+    #user-good-lists
+     =render partial: 'user_goods'
+    = paginate @goods
 #post-show
 #new-form

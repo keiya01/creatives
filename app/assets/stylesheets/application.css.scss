@@ -263,6 +263,42 @@ header{
 	color: #009900;
 	padding-left: 5px;
 }
+footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	width: 100%;
+	background-color: rgba(255,255,255,1);
+	float: left;
+	text-align: center;
+	border-top: 1px solid #aaa;
+}
+.enter{
+	display: inline-block;
+	width: 100%;
+}
+.enter-left{
+	float: left;
+	margin-left: 40px;
+}
+.enter-right{
+	float: right;
+	margin-right: 40px;
+}
+.enter-btn{
+	color: #009900;
+	font-weight: bold;
+	padding: 5px 20px;
+	background-color: #fff;
+	border: 1px solid #009900;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+.device-none{
+	display: none;
+}
 @media screen and (min-width: 480px){
 	#load p{
 		position: absolute;
@@ -270,6 +306,12 @@ header{
 		display: inline-block;
 		margin: 0 43%;
 
+	}
+	footer{
+		display: none;
+	}
+	.device-none{
+		display: inline;
 	}
 }
 @media screen and (min-width: 960px){
